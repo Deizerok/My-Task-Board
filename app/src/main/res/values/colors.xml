@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary_color">#000000</color>
+    <color name="background_app">#FFFFFF</color>
 </resources>

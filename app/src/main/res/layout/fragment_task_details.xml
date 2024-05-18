@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginTop="4dp"
+        android:elevation="3dp"
+        android:background="@drawable/background_task"
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/back"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/background_task"
+        android:backgroundTint="@color/white"
+        android:elevation="3dp">
+
+        <ImageView
+            android:id="@+id/pictureTaskImageView"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/test_image" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/background_task"
+        android:backgroundTint="@color/white"
+        android:elevation="3dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/background_task"
+            android:backgroundTint="@color/white"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/taskNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="16sp"
+                tools:text="Task: Learn English" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#DADADA" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="0.8"
+            android:background="@drawable/background_task"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="UseCompoundDrawables,UselessParent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/timer" />
+
+                <TextView
+                    android:id="@+id/taskTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:textSize="16sp"
+                    tools:text="0m" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/background_task"
+        android:backgroundTint="@color/white"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/description"
+                android:textSize="16sp" />
+
+            <Button
+                android:elevation="3dp"
+                android:id="@+id/optionsTaskButton"
+                style="?attr/materialIconButtonStyle"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/options"
+                android:padding="4dp"
+                android:paddingVertical="2dp"
+                android:pointerIcon="context_menu"
+                app:icon="@drawable/options_icon"
+                app:iconGravity="start"
+                app:iconSize="20dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:textSize="16sp"
+            tools:text="For example, you can leave links to important materials in the description!" />
+    </LinearLayout>
+</LinearLayout>
