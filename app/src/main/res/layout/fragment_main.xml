@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:boxBackgroundColor="@color/white"
+        android:enabled="false"
+        android:id="@+id/searchTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColorHint="#BEBEBE">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchTextInputEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/text_input_style"
+            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/search"
+            android:textColorHint="#BEBEBE"
+            android:hint="@string/search_task" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/createTaskButton"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/standart_button_style"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/create_task"
+        app:backgroundTint="@color/primary_color"
+        app:icon="@drawable/kanban"
+        app:iconGravity="textEnd"
+        app:iconSize="24dp" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/your_tasks"
+        android:textSize="20sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/viewholder_task"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+</LinearLayout>
