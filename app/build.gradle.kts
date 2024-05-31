@@ -52,11 +52,12 @@ android {
 dependencies {
     //Hilt
     implementation("androidx.activity:activity-ktx:1.9.0")
-    implementation("androidx.fragment:fragment:1.7.1")
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
+    implementation("com.google.dagger:hilt-android:2.50")
+    kapt("com.google.dagger:hilt-android-compiler:2.50")
     //Room
     implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
     androidTestImplementation("androidx.room:room-testing:2.6.1")
     //Image Picasso
     implementation("com.squareup.picasso:picasso:2.8")

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/mainLayout"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -19,7 +20,6 @@
             android:id="@+id/searchTextInputEditText"
             android:layout_width="fill_parent"
             android:layout_height="48dp"
-            android:background="@drawable/text_input_style"
             android:drawablePadding="12dp"
             android:drawableStart="@drawable/search"
             android:textColorHint="#BEBEBE"
@@ -42,15 +42,16 @@
         app:iconSize="24dp" />
 
     <TextView
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:fontFamily="@font/inter_bold"
+        android:fontFamily="@font/poppins_bold"
         android:text="@string/your_tasks"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainTaskRecyclerView"
         tools:listitem="@layout/viewholder_task"
         android:layout_weight="1"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
