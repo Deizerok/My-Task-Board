@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_semibold"
+            android:fontFamily="@font/poppins_semibold"
             android:text="@string/name_task"
             android:textSize="14sp" />
 
@@ -32,6 +32,7 @@
                 android:layout_height="48dp"
                 android:background="@drawable/text_input_style"
                 android:drawablePadding="12dp"
+                android:fontFamily="@font/poppins"
                 android:hint="@string/example_learn_english"
                 android:textColorHint="#BEBEBE" />
 
@@ -48,7 +49,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_semibold"
+            android:fontFamily="@font/poppins_semibold"
             android:text="@string/description_"
             android:textSize="14sp" />
 
@@ -67,6 +68,7 @@
                 android:background="@drawable/text_input_style"
                 android:drawablePadding="12dp"
                 android:gravity="start"
+                android:fontFamily="@font/poppins"
                 android:hint="@string/for_example_you_can_leave_links_to_important_materials_in_the_description"
                 android:textColorHint="#BEBEBE" />
 
@@ -88,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_semibold"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/picture"
                 android:textSize="14sp" />
 
@@ -96,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
-                android:fontFamily="@font/inter_semibold"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/please_put_a_picture_of_a_white_background"
                 android:textColor="#BEBEBE"
                 android:textSize="10sp" />
@@ -117,7 +119,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_semibold"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/plus"
                 android:textColor="#BEBEBE"
                 android:textSize="20sp"
@@ -141,7 +143,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@drawable/standart_button_style"
-        android:fontFamily="@font/inter_semibold"
+        android:fontFamily="@font/poppins_semibold"
         android:text="@string/create_task"
         android:textSize="14sp"
         app:backgroundTint="@color/primary_color"

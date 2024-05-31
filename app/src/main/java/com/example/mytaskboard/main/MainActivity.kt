@@ -5,7 +5,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mytaskboard.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import java.lang.Thread.sleep
+import java.util.logging.Handler
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -15,12 +20,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        enableEdgeToEdge()
 
         viewModel.navigationLiveData().observe(this) {
             it.show(binding.container.id, supportFragmentManager)
         }
 
-        viewModel.init(isFirstRun = savedInstanceState == null)
+        viewModel.init(savedInstanceState == null)
     }
 }

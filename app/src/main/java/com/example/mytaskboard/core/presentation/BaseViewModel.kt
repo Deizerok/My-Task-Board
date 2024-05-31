@@ -6,7 +6,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 
-abstract class BaseViewModel(private val runAsync: RunAsync) : ViewModel() {
+abstract class BaseViewModel(
+    private val runAsync: RunAsync
+) : ViewModel() {
 
     private val coroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
 
