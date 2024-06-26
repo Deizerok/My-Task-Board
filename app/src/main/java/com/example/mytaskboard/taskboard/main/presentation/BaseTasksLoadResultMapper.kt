@@ -6,7 +6,7 @@ import com.example.mytaskboard.taskboard.main.presentation.adapter.TaskUi
 import javax.inject.Inject
 
 class BaseTasksLoadResultMapper @Inject constructor(
-    private val communication: TasksCommunication,
+    private val communication: TasksLiveDataWrapper,
     private val taskItemToProductUiMapper: TaskItem.Mapper<TaskUi>
 ) : LoadResult.Mapper<TaskItem> {
 

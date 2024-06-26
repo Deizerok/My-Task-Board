@@ -9,7 +9,7 @@ interface TasksCacheDataSource {
 
     suspend fun task(id: Int): TaskEntity
 
-    suspend fun saveTask(task: TaskEntity)
+    suspend fun addTask(task: TaskEntity)
 
     suspend fun addTimeForTask(time: Int,id: Int)
 
@@ -21,12 +21,12 @@ interface TasksCacheDataSource {
 
         override suspend fun task(id: Int): TaskEntity = dao.task(id)
 
-        override suspend fun saveTask(task: TaskEntity) = dao.saveTask(task)
+        override suspend fun addTask(task: TaskEntity) = dao.addTask(task)
 
         override suspend fun addTimeForTask(time: Int,id: Int) {
             val taskEntity: TaskEntity = dao.task(id)
             val newTaskEntity = taskEntity.copy(time = time)
-            dao.saveTask(newTaskEntity)
+            dao.addTask(newTaskEntity)
         }
     }
 }

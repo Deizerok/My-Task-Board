@@ -38,7 +38,9 @@ class TaskBoardFragment : Fragment() {
         val animation = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
         binding.mainLayout.startAnimation(animation)
 
-        binding.createTaskButton.setOnClickListener {}
+        binding.createTaskButton.setOnClickListener {
+            viewModel.goToCreateTask()
+        }
 
         viewModel.liveData().observe(viewLifecycleOwner) {
             it.show(adapter = tasksAdapter)

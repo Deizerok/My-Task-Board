@@ -4,7 +4,6 @@ plugins {
     id("kotlin-kapt")
     id("androidx.room")
     id("com.google.dagger.hilt.android")
-
 }
 
 android {
@@ -54,6 +53,7 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.9.0")
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     implementation("com.google.dagger:hilt-android:2.50")
+    implementation(libs.firebase.crashlytics.buildtools)
     kapt("com.google.dagger:hilt-android-compiler:2.50")
     //Room
     implementation("androidx.room:room-ktx:2.6.1")
