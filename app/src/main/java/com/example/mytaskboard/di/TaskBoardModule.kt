@@ -2,20 +2,17 @@ package com.example.mytaskboard.di
 
 import com.example.mytaskboard.core.domain.LoadResult
 import com.example.mytaskboard.taskboard.main.data.BaseTasksRepository
-import com.example.mytaskboard.taskboard.main.data.cache.TaskDao
-import com.example.mytaskboard.taskboard.main.data.cache.TasksCacheDataSource
 import com.example.mytaskboard.taskboard.main.domain.TaskItem
 import com.example.mytaskboard.taskboard.main.domain.TaskRepository
 import com.example.mytaskboard.taskboard.main.presentation.BaseTasksLoadResultMapper
 import com.example.mytaskboard.taskboard.main.presentation.TaskItemToTaskUiMapper
-import com.example.mytaskboard.taskboard.main.presentation.TasksCommunication
+import com.example.mytaskboard.taskboard.main.presentation.TasksLiveDataWrapper
 import com.example.mytaskboard.taskboard.main.presentation.adapter.TaskUi
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
-import dagger.hilt.components.SingletonComponent
 
 
 @Module
@@ -32,7 +29,7 @@ abstract class TaskBoardModule {
 
     @Binds
     @ViewModelScoped
-    abstract fun bindFavoriteProductsCommunication(communication: TasksCommunication.Base): TasksCommunication
+    abstract fun bindTasksCommunication(communication: TasksLiveDataWrapper.Base): TasksLiveDataWrapper
 
     @Binds
     @ViewModelScoped

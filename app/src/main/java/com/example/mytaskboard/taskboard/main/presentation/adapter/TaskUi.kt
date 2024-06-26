@@ -28,11 +28,9 @@ interface TaskUi {
 
         override fun type() = TaskTypeUi.Base
 
-
         override fun goToTaskDetails(viewModel: TaskClickActions) {
             viewModel.goToTaskDetails(id = id)
         }
-
 
         override fun showTask(binding: ViewholderTaskBinding, adapter: TasksAdapter) {
             val bitmap = BitmapFactory.decodeByteArray(
