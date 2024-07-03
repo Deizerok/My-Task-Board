@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/BackButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/navigate_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/main_menu"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/standart_button_style"
+            android:backgroundTint="@color/button_color_2"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/radius_8"
+                android:backgroundTint="#4A4A51"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/github" />
+            </LinearLayout>
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Github project"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/standart_button_style"
+            android:backgroundTint="@color/button_color_2"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/radius_8"
+                android:backgroundTint="#4A4A51"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/about_icon" />
+            </LinearLayout>
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="About Us"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/supportProjectButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/standart_button_style"
+        android:backgroundTint="@color/button_color_2"
+        android:gravity="start"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/radius_8"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/task_1_icon" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/support_the_project"
+            android:textColor="@color/primary_color" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="Developers: Deizerok"
+        android:textColor="#6E6E70"
+        android:textSize="14sp" />
+</LinearLayout>

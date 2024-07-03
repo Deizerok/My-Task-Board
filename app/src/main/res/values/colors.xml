@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary_color">#000000</color>
-    <color name="background_app">#FFFFFF</color>
+    <color name="primary_color">#518D5E</color>
+    <color name="background_app">#131313</color>
+    <color name="button_color_2">#29282B</color>
 </resources>

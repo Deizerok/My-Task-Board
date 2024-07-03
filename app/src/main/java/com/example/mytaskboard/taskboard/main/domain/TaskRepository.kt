@@ -7,6 +7,4 @@ interface TaskRepository {
     suspend fun tasks(): LoadResult<TaskItem>
 
     suspend fun task(id: Int): TaskItem
-
-
 }

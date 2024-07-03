@@ -9,8 +9,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_semibold"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/you_don_t_have_tasks_create_one"
-        android:textColor="#BEBEBE"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 </LinearLayout>

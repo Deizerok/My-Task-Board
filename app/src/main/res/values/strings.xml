@@ -21,4 +21,10 @@
     <string name="for_example_you_can_leave_links_to_important_materials_in_the_description">For example, you can leave links to important materials in the description!</string>
     <string name="plus">+</string>
     <string name="example_learn_english">Example, Learn English</string>
+    <string name="fab_button">FAB button</string>
+    <string name="time_spent">Time spent</string>
+    <string name="task">Task</string>
+    <string name="choose_an_icon">Choose an icon:</string>
+    <string name="support_the_project">Support the project</string>
+    <string name="main_menu">Main menu</string>
 </resources>
