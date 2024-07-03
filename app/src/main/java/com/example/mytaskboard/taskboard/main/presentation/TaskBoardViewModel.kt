@@ -6,6 +6,7 @@ import com.example.mytaskboard.core.presentation.BaseViewModel
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.taskboard.create.presentation.CreateTaskScreen
+import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsScreen
 import com.example.mytaskboard.taskboard.main.domain.TaskItem
 import com.example.mytaskboard.taskboard.main.domain.TaskRepository
 import com.example.mytaskboard.taskboard.main.presentation.adapter.TaskClickActions
@@ -32,7 +33,7 @@ class TaskBoardViewModel @Inject constructor(
     }
 
     override fun goToTaskDetails(id: Int) {
-        //      navigation.updateUi(TaskDetailsScreen(id))
+        navigation.updateUi(TaskDetailsScreen(id))
     }
 
     override fun goToCreateTask() {

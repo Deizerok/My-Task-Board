@@ -34,7 +34,6 @@ class CreateTaskFragment : Fragment() {
     private val binding: FragmentCreateTaskBinding get() = _binding!!
     private val viewModel: CreateTaskViewModel by viewModels()
 
-    private val PERMISSION_REQUEST_CODE = 1001
     private val PICK_IMAGE_REQUEST = 1
     private var picture: ByteArray? = null
 

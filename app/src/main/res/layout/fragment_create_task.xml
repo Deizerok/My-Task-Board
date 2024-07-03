@@ -4,9 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:focusable="true"
-    android:background="@color/white"
+    android:background="@color/background_app"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:src="@drawable/navigate_back"
+            android:id="@+id/backCreateTaskButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/task" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="invisible" />
+    </LinearLayout>
+
 
     <Space
         android:layout_weight="0.1"
@@ -20,6 +49,7 @@
         android:paddingHorizontal="8dp">
 
         <TextView
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
@@ -32,7 +62,8 @@
             android:layout_height="wrap_content"
             android:enabled="true"
             android:textColorHint="#BEBEBE"
-            app:boxBackgroundColor="@color/white">
+            app:boxStrokeWidth="1dp"
+            app:boxBackgroundColor="#2E2E2E">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nameTaskInputEditText"
@@ -54,6 +85,7 @@
         android:paddingHorizontal="8dp">
 
         <TextView
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
@@ -66,7 +98,7 @@
             android:layout_height="wrap_content"
             android:enabled="true"
             android:textColorHint="#BEBEBE"
-            app:boxBackgroundColor="@color/white">
+            app:boxBackgroundColor="#2E2E2E">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/descriptionInputEditText"
@@ -94,51 +126,13 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="@string/picture"
+                android:text="@string/choose_an_icon"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="4dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="@string/please_put_a_picture_of_a_white_background"
-                android:textColor="#BEBEBE"
-                android:textSize="10sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/addPictureImageViewLayout"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginHorizontal="1dp"
-            android:layout_marginBottom="1dp"
-            android:background="@drawable/background_task"
-            android:backgroundTint="@color/white"
-            android:elevation="3dp"
-            android:gravity="center">
-
-
-            <TextView
-                android:id="@+id/dotTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="@string/plus"
-                android:textColor="#BEBEBE"
-                android:textSize="20sp"
-                android:visibility="visible" />
-
-            <ImageView
-                android:id="@+id/addPictureImageView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="TODO"
-                android:padding="8dp"
-                android:visibility="gone" />
         </LinearLayout>
 
 
@@ -150,7 +144,7 @@
         android:layout_height="0dp"/>
 
     <LinearLayout
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/primary_color"
         android:layout_margin="8dp"
         android:padding="12dp"
         android:gravity="center"
@@ -161,49 +155,12 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:textColor="@color/white"
             android:textSize="14dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/create_task"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:backgroundTint="@color/primary_color"
-        android:layout_margin="8dp"
-        android:padding="12dp"
-        android:gravity="center"
-        android:elevation="3dp"
-        android:background="@drawable/standart_button_style"
-        android:id="@+id/BackButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:src="@drawable/arrow_back_24dp_fill0_wght400_grad0_opsz24_1"
-            android:layout_width="24dp"
-            android:layout_height="24dp"/>
-
-        <Space
-            android:layout_weight="0.1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"/>
-
-        <TextView
-            android:textColor="@color/white"
-            android:textSize="14dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Space
-            android:layout_weight="0.1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"/>
-        <LinearLayout
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            tools:ignore="UselessLeaf" />
     </LinearLayout>
 
 </LinearLayout>
