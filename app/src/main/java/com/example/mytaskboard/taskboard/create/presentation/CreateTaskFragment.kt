@@ -1,16 +1,9 @@
 package com.example.mytaskboard.taskboard.create.presentation
 
-import android.Manifest
-import android.app.Activity
-import android.app.Activity.RESULT_OK
-import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.net.Uri
+import android.graphics.Canvas
+import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.os.Environment
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,13 +11,10 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentCreateTaskBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
 import java.io.ByteArrayOutputStream
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
 
 
 @AndroidEntryPoint
@@ -34,7 +24,6 @@ class CreateTaskFragment : Fragment() {
     private val binding: FragmentCreateTaskBinding get() = _binding!!
     private val viewModel: CreateTaskViewModel by viewModels()
 
-    private val PICK_IMAGE_REQUEST = 1
     private var picture: ByteArray? = null
 
     override fun onCreateView(
@@ -49,32 +38,61 @@ class CreateTaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.addPictureImageViewLayout.setOnClickListener {
-            binding.dotTextView.visibility = View.GONE
-            binding.addPictureImageView.visibility = View.VISIBLE
-            openGallery()
-        }
-
+        var iconChoose = 0
+        whatIconChoose(iconChoose)
         val titleTextView = binding.nameTaskInputEditText
         val descriptionTextView = binding.descriptionInputEditText
-        val toastPicture = {
-            if (picture == null)
-            Toast.makeText(requireContext(), "Upload picture please", Toast.LENGTH_LONG).show()
+
+        binding.iconOne.setOnClickListener {
+            whatIconChoose(iconChoose)
+            iconChoose = 1
+            binding.whatIconChooseTextView.text = iconChoose.toString()
+            picture = convertSVGToByteArray(R.drawable.task_1_icon)
+            binding.iconOne.setBackgroundResource(R.drawable.selected_icon_for_task)
+        }
+
+        binding.iconTwo.setOnClickListener {
+            whatIconChoose(iconChoose)
+            iconChoose = 2
+            binding.whatIconChooseTextView.text = iconChoose.toString()
+            picture = convertSVGToByteArray(R.drawable.task_2_icon)
+            binding.iconTwo.setBackgroundResource(R.drawable.selected_icon_for_task)
+        }
+
+        binding.iconThree.setOnClickListener {
+            whatIconChoose(iconChoose)
+            iconChoose = 3
+            binding.whatIconChooseTextView.text = iconChoose.toString()
+            picture = convertSVGToByteArray(R.drawable.task_3_icon)
+            binding.iconThree.setBackgroundResource(R.drawable.selected_icon_for_task)
+        }
+
+        binding.iconFour.setOnClickListener {
+            whatIconChoose(iconChoose)
+            iconChoose = 4
+            binding.whatIconChooseTextView.text = iconChoose.toString()
+            picture = convertSVGToByteArray(R.drawable.task_4_icon)
+            binding.iconFour.setBackgroundResource(R.drawable.selected_icon_for_task)
+        }
+
+        binding.iconFive.setOnClickListener {
+            whatIconChoose(iconChoose)
+            iconChoose = 5
+            binding.whatIconChooseTextView.text = iconChoose.toString()
+            picture = convertSVGToByteArray(R.drawable.task_5_icon)
+            binding.iconFive.setBackgroundResource(R.drawable.selected_icon_for_task)
         }
 
         binding.createTask0Button.setOnClickListener {
             if (titleTextView.text.toString() == "" && descriptionTextView.text.toString() == "") {
-
                 titleTextView.error = "There can be no emptiness here"
                 descriptionTextView.error = "There can be no emptiness here"
-                toastPicture
             } else if (descriptionTextView.text.toString() == "") {
-
                 descriptionTextView.error = "There can be no emptiness here"
-                toastPicture
             } else {
                 if (picture == null) {
-                    Toast.makeText(requireContext(), "Upload picture please", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Upload picture please", Toast.LENGTH_LONG)
+                        .show()
                 } else {
                     viewModel.createTask(
                         title = titleTextView.text.toString(),
@@ -83,47 +101,52 @@ class CreateTaskFragment : Fragment() {
                         picture = picture!!
                     )
                 }
-
             }
         }
 
-        binding.BackButton.setOnClickListener {
+        binding.backCreateTaskButton.setOnClickListener {
             viewModel.back()
         }
     }
 
-    private fun openGallery() {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "image/*"
-        startActivityForResult(intent, PICK_IMAGE_REQUEST)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
-            val imageUri: Uri? = data.data
-            imageUri?.let { saveImage(it) }
+    private fun whatIconChoose(idIcon: Int) {
+        if (idIcon == 1) {
+            binding.iconOne.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+        } else if (idIcon == 2) {
+            binding.iconTwo.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+        } else if (idIcon == 3) {
+            binding.iconThree.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+        } else if (idIcon == 4) {
+            binding.iconFour.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+        } else if (idIcon == 5) {
+            binding.iconFive.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+        } else {
+            binding.iconOne.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+            binding.iconTwo.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+            binding.iconThree.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+            binding.iconFour.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+            binding.iconFive.setBackgroundResource(R.drawable.no_selected_icon_for_task)
         }
     }
 
-    private fun saveImage(imageUri: Uri) {
-        try {
-            val inputStream = requireContext().contentResolver.openInputStream(imageUri)
-            val bitmap = BitmapFactory.decodeStream(inputStream)
-            inputStream?.close()
-
-            val byteArrayOutputStream = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
-            val imageData = byteArrayOutputStream.toByteArray()
-
-            binding.addPictureImageView.setImageBitmap(bitmap)
-
-            picture = imageData
-        } catch (e: IOException) {
-            e.printStackTrace()
-            Toast.makeText(requireContext(), "Не вдалося зберегти зображення", Toast.LENGTH_SHORT)
-                .show()
+    private fun convertSVGToByteArray(resId: Int): ByteArray {
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        val drawable: Drawable? = ContextCompat.getDrawable(requireContext(), resId)
+        drawable?.let {
+            val bitmap = Bitmap.createBitmap(
+                drawable.intrinsicWidth,
+                drawable.intrinsicHeight,
+                Bitmap.Config.ARGB_8888
+            )
+            val canvas = Canvas(bitmap)
+            drawable.setBounds(0, 0, canvas.width, canvas.height)
+            drawable.draw(canvas)
+            bitmap.let {
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
+                bitmap.recycle()
+            }
         }
+        return byteArrayOutputStream.toByteArray()
     }
 
     override fun onDestroyView() {

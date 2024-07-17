@@ -19,6 +19,7 @@ interface Screen {
             supportFragmentManager
                 .beginTransaction()
                 .replace(containerId, fragment())
+                .addToBackStack(null)
                 .commit()
         }
 

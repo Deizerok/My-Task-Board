@@ -8,7 +8,7 @@ import com.example.fakestore.core.presentation.ProvideLiveData
 interface LiveDataWrapper<T : Any> : UiUpdate<T>, ProvideLiveData<T> {
 
     abstract class Single<T : Any>(
-        private val liveData: MutableLiveData<T> = SingleLiveEvent()
+        protected val liveData: MutableLiveData<T> = SingleLiveEvent()
     ) : LiveDataWrapper<T> {
 
         override fun updateUi(value: T) {

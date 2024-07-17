@@ -17,7 +17,6 @@
     <string name="name_task">Name Task*</string>
     <string name="description_">Description*</string>
     <string name="picture">Picture</string>
-    <string name="please_put_a_picture_of_a_white_background">Please put a picture of a white background</string>
     <string name="for_example_you_can_leave_links_to_important_materials_in_the_description">For example, you can leave links to important materials in the description!</string>
     <string name="plus">+</string>
     <string name="example_learn_english">Example, Learn English</string>
@@ -27,4 +26,5 @@
     <string name="choose_an_icon">Choose an icon:</string>
     <string name="support_the_project">Support the project</string>
     <string name="main_menu">Main menu</string>
+    <string name="example_20_40_60">For example 20, 40, 60</string>
 </resources>

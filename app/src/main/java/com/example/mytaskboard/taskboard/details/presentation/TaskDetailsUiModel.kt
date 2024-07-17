@@ -15,9 +15,9 @@ class TaskDetailsUiModel(
         val bitmap = BitmapFactory.decodeByteArray(
             picture, 0, picture.size
         )
-        binding.pictureTaskImageView.setImageBitmap(bitmap)
-        binding.taskNameTextView.text = title
+        binding.iconImageView.setImageBitmap(bitmap)
+        binding.titleTextView.text = title
         binding.descriptionTextView.text = description
-        binding.taskTimeTextView.text = "$time m"
+        binding.timeTextView.text = "$time m"
     }
 }

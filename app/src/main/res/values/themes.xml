@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MyTaskBoard" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimary">@color/background_app</item>
     </style>
 
     <style name="Theme.MyTaskBoard" parent="Base.Theme.MyTaskBoard" />
