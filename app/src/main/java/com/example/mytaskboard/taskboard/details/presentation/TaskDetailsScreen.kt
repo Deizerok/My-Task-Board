@@ -4,10 +4,10 @@ import androidx.fragment.app.Fragment
 import com.example.mytaskboard.main.Screen
 
 data class TaskDetailsScreen(
-    private val productId: Int,
+    private val taskId: Int,
 ) : Screen.Add(TaskDetailsFragment::class.java) {
 
     override fun fragment(): Fragment {
-        return TaskDetailsFragment.newInstance(productId)
+        return TaskDetailsFragment.newInstance(taskId)
     }
 }

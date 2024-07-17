@@ -37,9 +37,9 @@ interface TaskUi {
                 picture, 0, picture.size
             )
             with(binding) {
-                taskNameTextView.text = title
-                taskTimeTextView.text = "$time m"
-                pictureTaskImageView.setImageBitmap(bitmap)
+                titleTextView.text = title
+                timeTextView.text = "$time m"
+                iconImageView.setImageBitmap(bitmap)
             }
         }
 

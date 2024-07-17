@@ -9,6 +9,7 @@ import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.main.Screen
 import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
 import com.example.mytaskboard.taskboard.main.domain.TaskItem
+import com.example.mytaskboard.taskboard.main.presentation.TaskBoardScreen
 import com.example.mytaskboard.taskboard.main.presentation.TasksUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -33,5 +34,19 @@ class TaskDetailsViewModel @Inject constructor(
     }
 
     fun back() = navigation.updateUi(Screen.Pop)
+
+    fun deleteTask(id: Int) {
+        runAsync({ repository.deleteByTaskId(id) }) {
+            navigation.updateUi(TaskBoardScreen)
+        }
+    }
+
+    fun addTime(time: Int, idTask: Int) {
+        runAsync({ repository.addTimeForTask(time, idTask) },
+            {
+                navigation.updateUi(TaskDetailsScreen(idTask))
+                init(idTask)
+            })
+    }
 }
 

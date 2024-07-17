@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainDetailsLayout"
+    android:focusable="true"
+    android:clickable="true"
     android:background="@color/background_app"
     android:orientation="vertical">
 
@@ -14,7 +17,7 @@
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/BackButton"
+            android:id="@+id/backToMainButton"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/navigate_back" />
@@ -36,7 +39,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/taskViewHolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -72,7 +74,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="12dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="Clear House"
+                tools:text="Clear House"
                 android:textColor="@color/white"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -110,7 +112,7 @@
                     android:layout_marginStart="8dp"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
-                    android:text="1h 10m"
+                    tools:text="1h 10m"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -157,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
-                    android:text="i clear my home right now!"
+                    tools:text="i clear my home right now!"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -190,7 +192,7 @@
             <ImageView
                 android:layout_width="12dp"
                 android:layout_height="12dp"
-                android:src="@drawable/task_1_icon" />
+                android:src="@drawable/timer_icon" />
         </LinearLayout>
 
         <TextView
@@ -236,7 +238,7 @@
             android:textSize="14dp" />
     </LinearLayout>
 
-    <LinearLayout
+     <LinearLayout
         android:id="@+id/deleteTask0Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

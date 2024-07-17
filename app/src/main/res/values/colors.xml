@@ -5,4 +5,5 @@
     <color name="primary_color">#518D5E</color>
     <color name="background_app">#131313</color>
     <color name="button_color_2">#29282B</color>
+    <color name="icon_task_color">#4A4A51</color>
 </resources>
