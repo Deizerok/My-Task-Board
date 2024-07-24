@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainLayout"
+    android:clickable="true"
+    android:focusable="true"
     android:background="@color/background_app"
     android:orientation="vertical">
 
@@ -24,7 +27,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
-            android:text="@string/main_menu"
+            android:text="@string/menu"
             android:textColor="@color/white"
             android:textSize="14sp" />
 
@@ -35,77 +38,119 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/radius_128"
+        app:backgroundTint="@color/white"
+        android:layout_width="256dp"
+        android:layout_height="256dp">
+
+        <ImageView
+            android:src="@drawable/icon_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/button_color_2"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/people_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/standart_button_style"
-            android:backgroundTint="@color/button_color_2"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/radius_8"
-                android:backgroundTint="#4A4A51"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:src="@drawable/github" />
-            </LinearLayout>
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
-                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Github project"
-                android:textColor="@color/white" />
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins"
+                android:text="@string/developer"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins"
+                android:text="@string/developer_name"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/githubSourceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/button_color_2"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_marginEnd="8dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="21.33dp"
+                android:layout_height="21.33dp"
+                android:src="@drawable/github" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/standart_button_style"
-            android:backgroundTint="@color/button_color_2"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/radius_8"
-                android:backgroundTint="#4A4A51"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:src="@drawable/about_icon" />
-            </LinearLayout>
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
-                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="About Us"
-                android:textColor="@color/white" />
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins"
+                android:text="@string/github"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins"
+                android:text="@string/Source_code"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -114,42 +159,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/standart_button_style"
         android:backgroundTint="@color/button_color_2"
-        android:gravity="start"
-        android:padding="20dp">
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/star_24dp_e8eaed_fill0_wght400_grad0_opsz24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/radius_8"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:src="@drawable/task_1_icon" />
-        </LinearLayout>
-
-
-        <TextView
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/support_the_project"
-            android:textColor="@color/primary_color" />
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins"
+                android:text="@string/support_the_project"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins"
+                android:text="@string/just_click_the_star_on_the_github_project"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:layout_marginStart="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:gravity="center"
-        android:text="Developers: Deizerok"
-        android:textColor="#6E6E70"
-        android:textSize="14sp" />
 </LinearLayout>
