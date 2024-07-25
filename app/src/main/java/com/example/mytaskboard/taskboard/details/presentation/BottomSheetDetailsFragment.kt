@@ -1,17 +1,12 @@
 package com.example.mytaskboard.taskboard.details.presentation
 
 import android.os.Bundle
+import android.text.InputFilter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import com.example.mytaskboard.databinding.BottomSheetLayoutBinding
-import com.example.mytaskboard.databinding.FragmentTaskDetailsBinding
-import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsFragment.Companion
-import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsFragment.Companion.KEY_ID
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,19 +38,19 @@ class BottomSheetDetailsFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.addTimeTextInputLayout.editText!!.filters = arrayOf(InputFilter.LengthFilter(4))
         val id = requireArguments().getInt(KEY_ID)
-        val inputText = binding.addTimeInputEditText.text.toString()
-        var time = 0
-
-        if (inputText.isNotEmpty() && inputText.matches("\\d+".toRegex())) {
-            time = inputText.toInt()
-        } else {
-            binding.addTimeInputEditText.error = "Введіть коректне число"
-        }
+        var time: Int
 
         binding.addTimeBottomSheetButton.setOnClickListener {
-            viewModel.addTime(time,id)
-            dismiss()
+            if (binding.addTimeTextInputLayout.editText!!.text.toString() == "") {
+                binding.addTimeTextInputLayout.editText!!.error = "Enter correct numbers"
+            } else {
+                time = Integer.parseInt(binding.addTimeTextInputLayout.editText!!.text.toString())
+                viewModel.addTime(time, id)
+                dismiss()
+            }
+
         }
     }
 }

@@ -33,7 +33,7 @@ class TaskDetailsViewModel @Inject constructor(
         })
     }
 
-    fun back() = navigation.updateUi(Screen.Pop)
+    fun back() = navigation.updateUi(TaskBoardScreen)
 
     fun deleteTask(id: Int) {
         runAsync({ repository.deleteByTaskId(id) }) {

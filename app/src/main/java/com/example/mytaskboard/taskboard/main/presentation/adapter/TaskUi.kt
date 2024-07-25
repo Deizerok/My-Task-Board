@@ -33,12 +33,14 @@ interface TaskUi {
         }
 
         override fun showTask(binding: ViewholderTaskBinding, adapter: TasksAdapter) {
+            val timeString = time / 60
+            val times = "${timeString} hours ${time - timeString * 60} m"
             val bitmap = BitmapFactory.decodeByteArray(
                 picture, 0, picture.size
             )
             with(binding) {
                 titleTextView.text = title
-                timeTextView.text = "$time m"
+                timeTextView.text = "$times"
                 iconImageView.setImageBitmap(bitmap)
             }
         }

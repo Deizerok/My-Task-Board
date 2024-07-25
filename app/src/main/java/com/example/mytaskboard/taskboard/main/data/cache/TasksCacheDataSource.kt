@@ -31,7 +31,8 @@ interface TasksCacheDataSource {
 
         override suspend fun addTimeForTask(time: Int,id: Int) {
             val taskEntity: TaskEntity = dao.task(id)
-            val newTaskEntity = taskEntity.copy(time = time)
+            val timeEntity = taskEntity.time
+            val newTaskEntity = taskEntity.copy(time = timeEntity + time)
             dao.addTask(newTaskEntity)
         }
     }

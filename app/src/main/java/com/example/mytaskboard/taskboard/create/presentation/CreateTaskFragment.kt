@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -37,6 +38,9 @@ class CreateTaskFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val animationFadeIn = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
+        val animationFadeOut = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_out)
+        binding.mainLayout.startAnimation(animationFadeIn)
 
         var iconChoose = 0
         whatIconChoose(iconChoose)
@@ -96,7 +100,7 @@ class CreateTaskFragment : Fragment() {
                 } else {
                     viewModel.createTask(
                         title = titleTextView.text.toString(),
-                        description = titleTextView.text.toString(),
+                        description = descriptionTextView.text.toString(),
                         time = 0,
                         picture = picture!!
                     )
@@ -105,27 +109,35 @@ class CreateTaskFragment : Fragment() {
         }
 
         binding.backCreateTaskButton.setOnClickListener {
+            binding.mainLayout.startAnimation(animationFadeOut)
             viewModel.back()
         }
     }
 
     private fun whatIconChoose(idIcon: Int) {
-        if (idIcon == 1) {
-            binding.iconOne.setBackgroundResource(R.drawable.no_selected_icon_for_task)
-        } else if (idIcon == 2) {
-            binding.iconTwo.setBackgroundResource(R.drawable.no_selected_icon_for_task)
-        } else if (idIcon == 3) {
-            binding.iconThree.setBackgroundResource(R.drawable.no_selected_icon_for_task)
-        } else if (idIcon == 4) {
-            binding.iconFour.setBackgroundResource(R.drawable.no_selected_icon_for_task)
-        } else if (idIcon == 5) {
-            binding.iconFive.setBackgroundResource(R.drawable.no_selected_icon_for_task)
-        } else {
-            binding.iconOne.setBackgroundResource(R.drawable.no_selected_icon_for_task)
-            binding.iconTwo.setBackgroundResource(R.drawable.no_selected_icon_for_task)
-            binding.iconThree.setBackgroundResource(R.drawable.no_selected_icon_for_task)
-            binding.iconFour.setBackgroundResource(R.drawable.no_selected_icon_for_task)
-            binding.iconFive.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+        when (idIcon) {
+            1 -> {
+                binding.iconOne.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+            }
+            2 -> {
+                binding.iconTwo.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+            }
+            3 -> {
+                binding.iconThree.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+            }
+            4 -> {
+                binding.iconFour.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+            }
+            5 -> {
+                binding.iconFive.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+            }
+            else -> {
+                binding.iconOne.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+                binding.iconTwo.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+                binding.iconThree.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+                binding.iconFour.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+                binding.iconFive.setBackgroundResource(R.drawable.no_selected_icon_for_task)
+            }
         }
     }
 
