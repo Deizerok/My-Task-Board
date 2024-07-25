@@ -15,12 +15,8 @@ after completing it, you can simply delete it!
 <div style="display:flex;">
 <img src=".docs/Screenshot_My_Task_Board_Splash.png" alt="ui_diary" width="24%"/>
 <img src=".docs/Screenshot_My_Task_Board_TaskScreen.png" alt="ui_diary" width="24%"/>
-</div>
-</center>
-<center>
-<div style="display:flex;">
 <img src=".docs/Screenshot_My_Task_Board_CreateTaskScreen.png" alt="ui_diary" width="24%"/>
-<img src=".docs/Screenshot_My_Task_Board_DetailsTask.png" alt="ui_diary" width="24%"/>
-<img src=".docs/Screenshot_My_Task_Board_AddTime.png" alt="ui_diary" width="24%"/>
+<img src=".docs/Screenshot_My_Task_Board_Menu.png" alt="ui_diary" width="24%"/>
 </div>
 </center>
+
