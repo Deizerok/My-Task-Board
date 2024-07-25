@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainDetailsLayout"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="@color/background_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/backToMainButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/navigate_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/task"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/background_task"
+        android:elevation="5dp"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:backgroundTint="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/radius_8"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iconImageView"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/task_1_icon" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:fontFamily="@font/poppins_semibold"
+                tools:text="Clear House"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="@string/time_spent"
+                android:textColor="#6E6E70"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/timer" />
+
+                <TextView
+                    android:id="@+id/timeTextView"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    tools:text="1h 10m"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/descriptionLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/background_task"
+        android:elevation="5dp"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:backgroundTint="@color/white">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/description"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/descriptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    tools:text="i clear my home right now!"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/StartTimerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/standart_button_style"
+        android:backgroundTint="@color/button_color_2"
+        android:elevation="3dp"
+        android:gravity="left"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/radius_8"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/timer_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/start_timer"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/addTime0Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/standart_button_style"
+        android:backgroundTint="@color/button_color_2"
+        android:elevation="3dp"
+        android:gravity="left"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/radius_8"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/plus_2_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/add_time"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+     <LinearLayout
+        android:id="@+id/deleteTask0Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/standart_button_style"
+        android:backgroundTint="@color/button_color_2"
+        android:elevation="3dp"
+        android:gravity="left"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/radius_8"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/task_1_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/delete_task"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+</LinearLayout>
