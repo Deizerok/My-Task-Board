@@ -35,8 +35,8 @@ class TaskBoardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val tasksAdapter = TasksAdapter(viewModel)
         binding.mainTaskRecyclerView.adapter = tasksAdapter
-//        val animation = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
-//        binding.mainLayout.startAnimation(animation)
+        val animation = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
+        binding.mainLayout.startAnimation(animation)
 
         binding.floatingActionButton.setOnClickListener {
             viewModel.goToCreateTask()

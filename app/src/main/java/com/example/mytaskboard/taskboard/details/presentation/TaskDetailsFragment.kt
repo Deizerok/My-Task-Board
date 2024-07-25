@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.mytaskboard.R
@@ -45,13 +46,20 @@ class TaskDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val id = requireArguments().getInt(KEY_ID)
-        val animation = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
-        binding.mainDetailsLayout.startAnimation(animation)
+        val animationFadeIn = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
+        val animationFadeOut = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_out)
+        binding.mainDetailsLayout.startAnimation(animationFadeIn)
         viewModel.init(id)
 
 
         binding.backToMainButton.setOnClickListener {
+            binding.mainDetailsLayout.startAnimation(animationFadeOut)
             viewModel.back()
+        }
+
+        binding.StartTimerButton.setOnClickListener {
+            Toast.makeText(requireContext(), "Unfortunately, this feature is still being worked on", Toast.LENGTH_LONG)
+                .show()
         }
 
         binding.deleteTask0Button.setOnClickListener {
@@ -66,6 +74,8 @@ class TaskDetailsFragment : Fragment() {
             it.show(binding)
         }
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -34,10 +34,12 @@ class MenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val animation = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
-        binding.mainLayout.startAnimation(animation)
+        val animationFadeIn = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
+        val animationFadeOut = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_out)
+        binding.mainLayout.startAnimation(animationFadeIn)
 
         binding.BackButton.setOnClickListener {
+            binding.mainLayout.startAnimation(animationFadeOut)
             viewModel.goToBackScreen()
         }
 

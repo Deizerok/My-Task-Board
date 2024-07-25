@@ -12,12 +12,14 @@ class TaskDetailsUiModel(
 ) {
 
     fun show(binding: FragmentTaskDetailsBinding) {
+        val timeString = time / 60
+        val times = "$timeString hours ${time - timeString * 60} m"
         val bitmap = BitmapFactory.decodeByteArray(
             picture, 0, picture.size
         )
         binding.iconImageView.setImageBitmap(bitmap)
         binding.titleTextView.text = title
         binding.descriptionTextView.text = description
-        binding.timeTextView.text = "$time m"
+        binding.timeTextView.text = "$times"
     }
 }

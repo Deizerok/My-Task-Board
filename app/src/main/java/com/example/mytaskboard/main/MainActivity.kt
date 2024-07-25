@@ -1,5 +1,6 @@
 package com.example.mytaskboard.main
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -27,4 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.init(savedInstanceState == null)
     }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() = Unit
 }
