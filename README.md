@@ -8,7 +8,7 @@ after completing it, you can simply delete it!
 - Android Studio
 - Git
 - Kotlin
-# How to support me
+## How to support me
 - just click on the star to make it glow yellow!
 ## UI Screenshots
 <center>
