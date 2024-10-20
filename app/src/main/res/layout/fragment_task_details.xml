@@ -129,20 +129,19 @@
         android:elevation="5dp"
         android:focusable="true"
         android:orientation="vertical"
-        android:padding="16dp"
         app:backgroundTint="@color/white">
 
 
         <LinearLayout
+            android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="4dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/description"
                 android:textColor="@color/white"
