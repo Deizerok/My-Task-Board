@@ -8,12 +8,12 @@ import javax.inject.Inject
 class BaseCreateTaskRepository @Inject constructor(
     private val tasksCacheDataSource: TasksCacheDataSource
 ): CreateTaskRepository {
-    override suspend fun add(title: String, description: String, time: Int, picture: ByteArray) {
+
+    override suspend fun add(title: String, description: String, picture: ByteArray) {
         val task = TaskEntity(
             title = title,
             description = description,
-            time = time,
-            picture = picture
+            picture = picture,
         )
         tasksCacheDataSource.addTask(task)
     }

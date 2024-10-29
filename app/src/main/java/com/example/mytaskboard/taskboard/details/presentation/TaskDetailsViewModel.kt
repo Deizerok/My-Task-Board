@@ -7,43 +7,43 @@ import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
-import com.example.mytaskboard.taskboard.board.presentation.TaskBoardScreen
+import com.example.mytaskboard.taskboard.todo.presentation.TaskBoardScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class TaskDetailsViewModel @Inject constructor(
-    private val liveDataWrapper: TaskDetailsLiveDataWrapper,
+    private val taskLiveDataWrapper: TaskDetailsLiveDataWrapper,
     private val navigation: Navigation.Navigate,
     private val repository: TaskDetailsRepository,
     private val mapper: TaskItem.Mapper<TaskDetailsUiModel>,
     runAsync: RunAsync
 ) : BaseViewModel(runAsync), ProvideLiveData<TaskDetailsUiModel> {
 
-    override fun liveData(): LiveData<TaskDetailsUiModel> = liveDataWrapper.liveData()
+    fun init(id: Int) = runAsync({
+        repository.task(id)
+    }, { taskItem ->
+        taskLiveDataWrapper.updateUi(taskItem.map(mapper))
+    })
 
-    fun init(id: Int) {
-        runAsync({
-            repository.task(id)
-        }, { result ->
-            liveDataWrapper.updateUi(result.map(mapper))
-        })
+    fun stopwatchActionClick() {
+
+    }
+
+    fun finishTask(id: Int) = runAsync({
+        repository.finishTask(id)
+    }) {
+        navigation.updateUi(TaskBoardScreen)
+    }
+
+    fun deleteTask(id: Int) = runAsync({
+        repository.deleteByTaskId(id)
+    }) {
+        navigation.updateUi(TaskBoardScreen)
     }
 
     fun back() = navigation.updateUi(TaskBoardScreen)
 
-    fun deleteTask(id: Int) {
-        runAsync({ repository.deleteByTaskId(id) }) {
-            navigation.updateUi(TaskBoardScreen)
-        }
-    }
-
-    fun addTime(time: Int, idTask: Int) {
-        runAsync({ repository.addTimeForTask(time, idTask) },
-            {
-                navigation.updateUi(TaskDetailsScreen(idTask))
-                init(idTask)
-            })
-    }
+    override fun liveData(): LiveData<TaskDetailsUiModel> = taskLiveDataWrapper.liveData()
 }
 

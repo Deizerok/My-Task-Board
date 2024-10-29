@@ -5,35 +5,34 @@ import javax.inject.Inject
 
 interface TasksCacheDataSource {
 
-    suspend fun tasks(): List<TaskEntity>
+    suspend fun tasks(): List<TaskWithLogs>
 
-    suspend fun task(id: Int): TaskEntity
+    suspend fun task(id: Int): TaskWithLogs
 
     suspend fun addTask(task: TaskEntity)
 
-    suspend fun deleteByTaskId(id: Int)
+    suspend fun finishedTask(id: Int)
 
-    suspend fun addTimeForTask(time: Int,id: Int)
+    suspend fun deleteByTaskId(id: Int)
 
     class Base @Inject constructor(
         private val dao: TaskDao,
     ) : TasksCacheDataSource {
 
-        override suspend fun tasks(): List<TaskEntity> = dao.tasks()
+        override suspend fun tasks(): List<TaskWithLogs> = dao.todoTasks()
 
-        override suspend fun task(id: Int): TaskEntity = dao.task(id)
+        override suspend fun task(id: Int): TaskWithLogs = dao.task(id)
 
         override suspend fun addTask(task: TaskEntity) = dao.addTask(task)
 
-        override suspend fun deleteByTaskId(id: Int) {
-            dao.deleteByTaskId(id)
+        override suspend fun finishedTask(id: Int) {
+            val taskEntity = dao.task(id)
+            val finishedTask = taskEntity.task.copy(finished = 1)
+            dao.updateTask(finishedTask)
         }
 
-        override suspend fun addTimeForTask(time: Int,id: Int) {
-            val taskEntity: TaskEntity = dao.task(id)
-            val timeEntity = taskEntity.time
-            val newTaskEntity = taskEntity.copy(time = timeEntity + time)
-            dao.addTask(newTaskEntity)
+        override suspend fun deleteByTaskId(id: Int) {
+            dao.deleteByTaskId(id)
         }
     }
 }

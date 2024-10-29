@@ -1,7 +1,6 @@
 package com.example.mytaskboard.taskboard.todo.presentation
 
 import com.example.fakestore.core.presentation.ProvideLiveData
-import com.example.mytaskboard.core.domain.LoadResult
 import com.example.mytaskboard.core.presentation.BaseViewModel
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
@@ -10,6 +9,7 @@ import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsScreen
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import com.example.mytaskboard.taskboard.todo.domain.TaskRepository
 import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskClickActions
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -18,7 +18,7 @@ class TodoViewModel @Inject constructor(
     private val navigation: Navigation.Navigate,
     private val repository: TaskRepository,
     private val communication: TasksLiveDataWrapper,
-    private val mapper: LoadResult.Mapper<TaskItem>,
+    private val mapper: TaskItem.Mapper<TaskUi>,
     runAsync: RunAsync
 ) : BaseViewModel(runAsync), TaskClickActions, ProvideLiveData<TasksUiState> {
 
@@ -27,8 +27,16 @@ class TodoViewModel @Inject constructor(
     fun init() {
         runAsync({
             repository.tasks()
-        }, { result ->
-            result.map(mapper)
+        }, { taskItems ->
+            val uiState = if (taskItems.isEmpty()) {
+                TasksUiState.NoTasks
+            } else {
+                TasksUiState.Data(
+                    tasks = taskItems.map {
+                        it.map(mapper)
+                    })
+            }
+            communication.updateUi(uiState)
         })
     }
 
@@ -39,5 +47,4 @@ class TodoViewModel @Inject constructor(
     override fun goToCreateTask() {
         navigation.updateUi(CreateTaskScreen)
     }
-
 }

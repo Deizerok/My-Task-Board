@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import androidx.fragment.app.viewModels
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentDoneTaskBinding
 import com.example.mytaskboard.taskboard.todo.presentation.TodoViewModel
@@ -35,7 +35,8 @@ class DoneTaskFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val tasksAdapter = TodoTasksAdapter(viewModel)
 //        binding.mainTaskRecyclerView.adapter = tasksAdapter
-        val animation = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
+        val animation =
+            AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
         binding.mainLayout.startAnimation(animation)
 
 //        binding.floatingActionButton.setOnClickListener {

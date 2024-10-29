@@ -46,12 +46,13 @@ android {
     }
 }
 
-
-
 dependencies {
-    //Hilt
+
+    // by viewModel
     implementation(libs.androidx.activity.ktx)
-    implementation("androidx.fragment:fragment-ktx:1.8.4")
+    implementation(libs.androidx.fragment.ktx)
+
+    //Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
     //Room
@@ -74,5 +75,4 @@ dependencies {
 
 kapt {
     correctErrorTypes = true
-
 }

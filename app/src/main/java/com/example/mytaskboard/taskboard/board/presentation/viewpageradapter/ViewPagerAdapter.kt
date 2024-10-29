@@ -17,6 +17,8 @@ class ViewPagerAdapter(
 
     override fun createFragment(position: Int): Fragment = when (position) {
         0 -> ToDoTaskFragment()
-        else -> { DoneTaskFragment() }
+        else -> {
+            DoneTaskFragment()
+        }
     }
 }

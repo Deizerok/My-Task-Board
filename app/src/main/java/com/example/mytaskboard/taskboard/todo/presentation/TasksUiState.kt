@@ -7,14 +7,14 @@ interface TasksUiState {
 
     fun show(adapter: TodoTasksAdapter)
 
-    data class Success(private val tasks: List<TaskUi>) : TasksUiState {
+    data class Data(private val tasks: List<TaskUi>) : TasksUiState {
         override fun show(adapter: TodoTasksAdapter) {
             adapter.update(tasks)
         }
     }
 
      object NoTasks : TasksUiState {
-        override fun show(adapter: TodoTasksAdapter) {
+         override fun show(adapter: TodoTasksAdapter) {
             adapter.update(listOf(TaskUi.Empty))
         }
     }

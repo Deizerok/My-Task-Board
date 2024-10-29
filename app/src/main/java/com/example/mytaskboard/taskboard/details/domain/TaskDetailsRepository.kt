@@ -6,7 +6,7 @@ interface TaskDetailsRepository {
 
     suspend fun task(id: Int): TaskItem
 
-    suspend fun deleteByTaskId(id: Int)
+    suspend fun finishTask(id: Int)
 
-    suspend fun addTimeForTask(time: Int,id: Int)
+    suspend fun deleteByTaskId(id: Int)
 }

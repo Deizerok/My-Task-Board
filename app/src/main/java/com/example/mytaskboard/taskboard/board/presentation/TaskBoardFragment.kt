@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import androidx.fragment.app.viewModels
 import androidx.fragment.app.Fragment
 import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentTaskBoardBinding
@@ -22,7 +21,8 @@ class TaskBoardFragment : Fragment() {
 
     private var _binding: FragmentTaskBoardBinding? = null
     private val binding get() = _binding!!
-    @Inject lateinit var navigation: Navigation.Navigate
+    @Inject
+    lateinit var navigation: Navigation.Navigate
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -1,7 +1,7 @@
 package com.example.mytaskboard.taskboard.todo.presentation.adapter
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mytaskboard.databinding.ViewholderNoTaskBinding
 import com.example.mytaskboard.databinding.ViewholderProgressBinding
 import com.example.mytaskboard.databinding.ViewholderTaskBinding
@@ -31,6 +31,7 @@ abstract class TodoTaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             productUi.showTask(binding, adapter)
         }
     }
+
     class Empty(binding: ViewholderNoTaskBinding) : TodoTaskViewHolder(binding.root)
 
 }

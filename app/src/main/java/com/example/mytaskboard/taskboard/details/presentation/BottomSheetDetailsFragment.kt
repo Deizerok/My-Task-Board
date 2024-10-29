@@ -42,15 +42,15 @@ class BottomSheetDetailsFragment : BottomSheetDialogFragment() {
         val id = requireArguments().getInt(KEY_ID)
         var time: Int
 
-        binding.addTimeBottomSheetButton.setOnClickListener {
-            if (binding.addTimeTextInputLayout.editText!!.text.toString() == "") {
-                binding.addTimeTextInputLayout.editText!!.error = "Enter correct numbers"
-            } else {
-                time = Integer.parseInt(binding.addTimeTextInputLayout.editText!!.text.toString())
-                viewModel.addTime(time, id)
-                dismiss()
-            }
-
-        }
+//        binding.addTimeBottomSheetButton.setOnClickListener {
+//            if (binding.addTimeTextInputLayout.editText!!.text.toString() == "") {
+//                binding.addTimeTextInputLayout.editText!!.error = "Enter correct numbers"
+//            } else {
+//                time = Integer.parseInt(binding.addTimeTextInputLayout.editText!!.text.toString())
+//                viewModel.addTime(time, id)
+//                dismiss()
+//            }
+//
+//        }
     }
 }

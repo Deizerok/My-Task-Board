@@ -4,17 +4,13 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity("tasks")
+@Entity("Tasks")
 data class TaskEntity(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo("id")
-    var id: Int = 0,
-    @ColumnInfo("task")
+    @ColumnInfo("task_id")
+    val id: Int = 0,
     val title: String,
-    @ColumnInfo("description")
     val description: String,
-    @ColumnInfo("time")
-    val time: Int,
-    @ColumnInfo("picture")
-    val picture: ByteArray
+    val picture: ByteArray,
+    val finished: Byte = 0
 )

@@ -5,7 +5,7 @@ import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.main.Screen
 import com.example.mytaskboard.taskboard.create.domain.CreateTaskRepository
-import com.example.mytaskboard.taskboard.board.presentation.TaskBoardScreen
+import com.example.mytaskboard.taskboard.todo.presentation.TaskBoardScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -16,9 +16,9 @@ class CreateTaskViewModel @Inject constructor(
     runAsync: RunAsync
 ) : BaseViewModel(runAsync) {
 
-    fun createTask(title: String, description: String, time: Int, picture: ByteArray) {
+    fun createTask(title: String, description: String, picture: ByteArray) {
         runAsync({
-                repository.add(title, description, time, picture)
+            repository.add(title, description, picture)
         }, { result ->
             navigation.updateUi(TaskBoardScreen)
         })
@@ -27,5 +27,4 @@ class CreateTaskViewModel @Inject constructor(
     fun back() {
         navigation.updateUi(Screen.Pop)
     }
-
 }

@@ -55,37 +55,35 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/taskBoardTabLayout"
-        app:tabTextColor="@color/white"
+        android:layout_height="wrap_content"
+        app:tabBackground="@color/background_app"
+        app:tabGravity="fill"
+        app:tabIconTint="@color/white"
         app:tabIndicatorColor="@color/primary_color"
         app:tabIndicatorFullWidth="true"
-        app:tabBackground="@color/background_app"
-        app:tabMode="fixed"
-        app:tabIconTint="@color/white"
-        app:tabGravity="fill"
         app:tabInlineLabel="true"
+        app:tabMode="fixed"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:tabTextColor="@color/white">
 
         <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:icon="@drawable/bookmark_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/to_do"
-            />
+            android:text="@string/to_do" />
 
         <com.google.android.material.tabs.TabItem
-            android:icon="@drawable/done_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/done"
-            />
+            android:icon="@drawable/done_icon"
+            android:text="@string/done" />
 
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
-        android:layout_weight="1"
         android:id="@+id/taskBoardViewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
 </LinearLayout>

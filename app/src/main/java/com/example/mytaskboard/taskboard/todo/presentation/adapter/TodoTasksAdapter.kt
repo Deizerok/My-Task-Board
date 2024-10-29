@@ -31,10 +31,4 @@ class TodoTasksAdapter(
     }
 
     override fun getItemCount(): Int = products.size
-
-    fun notify(productUi: TaskUi) {
-        val index = products.indexOf(products.find { it.isTheSameById(productUi.id()) }!!)
-        products[index] = productUi
-        notifyItemChanged(index)
-    }
 }

@@ -2,167 +2,154 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainDetailsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/mainDetailsLayout"
-    android:focusable="true"
-    android:clickable="true"
     android:background="@color/background_app"
-    android:orientation="vertical">
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:gravity="center"
-        android:padding="10dp">
+        android:layout_height="56dp"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/backToMainButton"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:src="@drawable/navigate_back" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/titleTextView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/poppins_medium"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_bold"
             android:gravity="center"
-            android:text="@string/task"
+            android:lineSpacingExtra="28sp"
+            android:lineSpacingMultiplier="0"
+            android:maxLines="1"
+            android:paddingHorizontal="8dp"
+            android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="14sp" />
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:visibility="invisible" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@drawable/background_task"
-        android:elevation="5dp"
-        android:focusable="true"
-        android:orientation="vertical"
-        android:padding="16dp"
-        app:backgroundTint="@color/white">
+            android:textSize="22sp"
+            tools:text="A very long task to check multiline " />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/radius_8"
+            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/radius_8"
-                android:gravity="center">
+            <ImageView
+                android:id="@+id/iconImageView"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/task_1_icon" />
 
-                <ImageView
-                    android:id="@+id/iconImageView"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/task_1_icon" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/titleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="12dp"
-                android:fontFamily="@font/poppins_semibold"
-                tools:text="Clear House"
-                android:textColor="@color/white"
-                android:textSize="16dp" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
-                android:text="@string/time_spent"
-                android:textColor="#6E6E70"
-                android:textSize="12sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/timer" />
-
-                <TextView
-                    android:id="@+id/timeTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="center"
-                    tools:text="1h 10m 0s"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
-            </LinearLayout>
-        </LinearLayout>
-
     </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
 
     <LinearLayout
         android:id="@+id/descriptionLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:background="@drawable/background_task"
         android:elevation="5dp"
-        android:focusable="true"
         android:orientation="vertical"
-        app:backgroundTint="@color/white">
+        android:padding="12dp">
 
-
-        <LinearLayout
-            android:padding="20dp"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/description"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:text="I clear my home right now!akldfajdlkfj aljsdfl;k jadlj a jaldjf lj alsdj lljadl ja;ldj ;lja; ;alsd ;jasd;l fjl;asdjf;l ja ;alsdjfl; ajsdl;f a;lj l;asdl; ;alj ;lasdjl; a;l ;ladsl;f lajsd;" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
+
+    <LinearLayout
+        android:id="@+id/timeLogLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_task"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/description"
+                android:fontFamily="@font/poppins_semibold"
+                android:includeFontPadding="false"
+                android:text="@string/time_log"
                 android:textColor="@color/white"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_semibold"
+                android:includeFontPadding="false"
+                android:text="@string/total"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/descriptionTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="center"
-                    tools:text="i clear my home right now!"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
-            </LinearLayout>
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/stopwatch_icon" />
+
+            <TextView
+                android:includeFontPadding="false"
+                android:id="@+id/totalTimeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:text="0h 0m 0s" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="14dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/timeLogRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
@@ -171,103 +158,166 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <LinearLayout
-        android:id="@+id/StartTimerButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:background="@drawable/standart_button_style"
-        android:backgroundTint="@color/button_color_2"
-        android:elevation="3dp"
-        android:gravity="left"
-        android:padding="12dp">
-
-        <LinearLayout
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/radius_8"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:src="@drawable/timer_icon" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/start_timer"
-            android:textColor="@color/white"
-            android:textSize="14dp" />
-    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/addTime0Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:background="@drawable/standart_button_style"
-        android:backgroundTint="@color/button_color_2"
-        android:elevation="3dp"
-        android:gravity="left"
-        android:padding="12dp">
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/radius_8"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_weight="1"
+            android:background="@drawable/standart_button_style"
+            android:backgroundTint="@color/content_background"
+            android:elevation="3dp"
+            android:orientation="vertical"
             android:gravity="center">
 
-            <ImageView
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:src="@drawable/plus_2_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:includeFontPadding="false"
+                android:text="@string/session_time"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:includeFontPadding="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="00:00:00"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/add_time"
-            android:textColor="@color/white"
-            android:textSize="14dp" />
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="0dp" />
+
+        <LinearLayout
+            android:id="@+id/stopwatchActionButton"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_weight="1"
+            android:background="@drawable/standart_button_style"
+            android:backgroundTint="@color/content_background"
+            android:elevation="3dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/radius_8"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/stopwatch_icon" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/actionButtonTextView"
+                android:includeFontPadding="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/start_session"
+                android:textColor="@color/button_text"
+                android:textSize="16sp" />
+        </LinearLayout>
+
     </LinearLayout>
 
-     <LinearLayout
-        android:id="@+id/deleteTask0Button"
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:background="@drawable/standart_button_style"
-        android:backgroundTint="@color/button_color_2"
-        android:elevation="3dp"
-        android:gravity="left"
-        android:padding="12dp">
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/radius_8"
-            android:gravity="center">
+            android:id="@+id/finishTaskButton"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_weight="1"
+            android:background="@drawable/standart_button_style"
+            android:backgroundTint="@color/content_background"
+            android:elevation="3dp"
+            android:gravity="center_vertical">
 
-            <ImageView
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:src="@drawable/task_1_icon" />
+            <LinearLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/radius_8"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/finish_icon" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/finish_task"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/delete_task"
-            android:textColor="@color/white"
-            android:textSize="14dp" />
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="0dp" />
+
+        <LinearLayout
+            android:id="@+id/deteleTaskButton"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_weight="1"
+            android:background="@drawable/standart_button_style"
+            android:backgroundTint="@color/content_background"
+            android:elevation="3dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/radius_8"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/detete_icon" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/delete_task"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
     </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
 
 </LinearLayout>

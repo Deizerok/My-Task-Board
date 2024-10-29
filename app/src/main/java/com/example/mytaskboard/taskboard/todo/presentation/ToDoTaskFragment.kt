@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import androidx.fragment.app.viewModels
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentToDoTaskBinding
 import com.example.mytaskboard.taskboard.todo.presentation.adapter.TodoTasksAdapter

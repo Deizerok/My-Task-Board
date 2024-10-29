@@ -9,7 +9,6 @@
     android:orientation="vertical">
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainTaskRecyclerView"
         android:layout_width="match_parent"
