@@ -7,11 +7,11 @@ import com.example.mytaskboard.databinding.ViewholderTaskBinding
 
 interface TaskTypeUi {
 
-    fun createViewHolder(parent: ViewGroup): TaskViewHolder
+    fun createViewHolder(parent: ViewGroup): TodoTaskViewHolder
 
     object Base : TaskTypeUi {
 
-        override fun createViewHolder(parent: ViewGroup) = TaskViewHolder.Base(
+        override fun createViewHolder(parent: ViewGroup) = TodoTaskViewHolder.Base(
             ViewholderTaskBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
@@ -19,15 +19,15 @@ interface TaskTypeUi {
     }
 
     object Progress : TaskTypeUi {
-        override fun createViewHolder(parent: ViewGroup): TaskViewHolder {
+        override fun createViewHolder(parent: ViewGroup): TodoTaskViewHolder {
             TODO("Not yet implemented")
         }
 
     }
 
     object Empty : TaskTypeUi {
-        override fun createViewHolder(parent: ViewGroup): TaskViewHolder =
-            TaskViewHolder.Empty(
+        override fun createViewHolder(parent: ViewGroup): TodoTaskViewHolder =
+            TodoTaskViewHolder.Empty(
                 ViewholderNoTaskBinding.inflate(
                     LayoutInflater.from((parent.context)), parent, false
                 )

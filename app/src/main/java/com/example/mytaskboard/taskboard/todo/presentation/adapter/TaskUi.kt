@@ -9,7 +9,7 @@ interface TaskUi {
 
     fun type(): TaskTypeUi
 
-    fun showTask(binding: ViewholderTaskBinding, adapter: TasksAdapter) = Unit
+    fun showTask(binding: ViewholderTaskBinding, adapter: TodoTasksAdapter) = Unit
 
     fun goToTaskDetails(viewModel: TaskClickActions) = Unit
 
@@ -30,7 +30,7 @@ interface TaskUi {
             viewModel.goToTaskDetails(id = id)
         }
 
-        override fun showTask(binding: ViewholderTaskBinding, adapter: TasksAdapter) {
+        override fun showTask(binding: ViewholderTaskBinding, adapter: TodoTasksAdapter) {
             val bitmap = BitmapFactory.decodeByteArray(
                 picture, 0, picture.size
             )

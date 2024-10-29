@@ -4,7 +4,6 @@ import com.example.fakestore.core.presentation.ProvideLiveData
 import com.example.mytaskboard.core.presentation.BaseViewModel
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
-import com.example.mytaskboard.menu.MenuScreen
 import com.example.mytaskboard.taskboard.create.presentation.CreateTaskScreen
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsScreen
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
@@ -15,7 +14,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class TaskBoardViewModel @Inject constructor(
+class TodoViewModel @Inject constructor(
     private val navigation: Navigation.Navigate,
     private val repository: TaskRepository,
     private val communication: TasksLiveDataWrapper,
@@ -47,9 +46,5 @@ class TaskBoardViewModel @Inject constructor(
 
     override fun goToCreateTask() {
         navigation.updateUi(CreateTaskScreen)
-    }
-
-    fun goToMenuScreen() {
-        navigation.updateUi(MenuScreen)
     }
 }
