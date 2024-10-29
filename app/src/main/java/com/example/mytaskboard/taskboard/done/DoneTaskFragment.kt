@@ -9,8 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.fragment.app.Fragment
 import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentDoneTaskBinding
-import com.example.mytaskboard.taskboard.board.presentation.TaskBoardViewModel
-import com.example.mytaskboard.taskboard.board.presentation.adapter.TodoTasksAdapter
+import com.example.mytaskboard.taskboard.todo.presentation.TodoViewModel
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TodoTasksAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -19,7 +19,7 @@ class DoneTaskFragment : Fragment() {
 
     private var _binding: FragmentDoneTaskBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: TaskBoardViewModel by viewModels()
+    private val viewModel: TodoViewModel by viewModels()
 
 
     override fun onCreateView(

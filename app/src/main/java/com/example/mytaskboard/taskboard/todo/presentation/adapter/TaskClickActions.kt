@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.board.presentation.adapter
+package com.example.mytaskboard.taskboard.todo.presentation.adapter
 
 interface TaskClickActions {
 

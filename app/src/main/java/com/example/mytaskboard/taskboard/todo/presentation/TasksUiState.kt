@@ -1,7 +1,7 @@
-package com.example.mytaskboard.taskboard.todo
+package com.example.mytaskboard.taskboard.todo.presentation
 
-import com.example.mytaskboard.taskboard.board.presentation.adapter.TaskUi
-import com.example.mytaskboard.taskboard.board.presentation.adapter.TodoTasksAdapter
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskUi
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TodoTasksAdapter
 
 interface TasksUiState {
 

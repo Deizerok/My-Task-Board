@@ -3,8 +3,8 @@ package com.example.mytaskboard.di
 import android.content.Context
 import androidx.room.Room
 import com.example.mytaskboard.core.data.MyTaskBoardDatabase
-import com.example.mytaskboard.taskboard.board.data.cache.TaskDao
-import com.example.mytaskboard.taskboard.board.data.cache.TasksCacheDataSource
+import com.example.mytaskboard.taskboard.todo.data.cache.TaskDao
+import com.example.mytaskboard.taskboard.todo.data.cache.TasksCacheDataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

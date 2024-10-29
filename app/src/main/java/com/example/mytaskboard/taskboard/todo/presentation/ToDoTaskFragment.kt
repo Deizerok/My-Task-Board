@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.todo
+package com.example.mytaskboard.taskboard.todo.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.fragment.app.Fragment
 import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentToDoTaskBinding
-import com.example.mytaskboard.taskboard.board.presentation.TaskBoardViewModel
-import com.example.mytaskboard.taskboard.board.presentation.adapter.TodoTasksAdapter
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TodoTasksAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -19,14 +18,13 @@ class ToDoTaskFragment : Fragment() {
 
     private var _binding: FragmentToDoTaskBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: TaskBoardViewModel by viewModels()
-
+    private val viewModel: TodoViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentToDoTaskBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -41,7 +39,6 @@ class ToDoTaskFragment : Fragment() {
         binding.floatingActionButton.setOnClickListener {
             viewModel.goToCreateTask()
         }
-
 
 
         viewModel.liveData().observe(viewLifecycleOwner) {

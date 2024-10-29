@@ -6,7 +6,7 @@ import com.example.mytaskboard.core.presentation.BaseViewModel
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
-import com.example.mytaskboard.taskboard.board.domain.TaskItem
+import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import com.example.mytaskboard.taskboard.board.presentation.TaskBoardScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

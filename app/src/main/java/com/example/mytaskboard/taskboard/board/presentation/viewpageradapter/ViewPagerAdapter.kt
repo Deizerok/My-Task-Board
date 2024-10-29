@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.mytaskboard.taskboard.done.DoneTaskFragment
-import com.example.mytaskboard.taskboard.todo.ToDoTaskFragment
+import com.example.mytaskboard.taskboard.todo.presentation.ToDoTaskFragment
 
 class ViewPagerAdapter(
     fragmentActivity: FragmentActivity

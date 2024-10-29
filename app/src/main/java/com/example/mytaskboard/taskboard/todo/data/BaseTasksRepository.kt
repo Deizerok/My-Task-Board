@@ -1,9 +1,9 @@
-package com.example.mytaskboard.taskboard.board.data
+package com.example.mytaskboard.taskboard.todo.data
 
 import com.example.mytaskboard.core.domain.LoadResult
-import com.example.mytaskboard.taskboard.board.data.cache.TasksCacheDataSource
-import com.example.mytaskboard.taskboard.board.domain.TaskItem
-import com.example.mytaskboard.taskboard.board.domain.TaskRepository
+import com.example.mytaskboard.taskboard.todo.data.cache.TasksCacheDataSource
+import com.example.mytaskboard.taskboard.todo.domain.TaskItem
+import com.example.mytaskboard.taskboard.todo.domain.TaskRepository
 import javax.inject.Inject
 
 class BaseTasksRepository @Inject constructor(

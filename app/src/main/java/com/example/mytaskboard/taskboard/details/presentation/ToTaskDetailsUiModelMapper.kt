@@ -1,6 +1,6 @@
 package com.example.mytaskboard.taskboard.details.presentation
 
-import com.example.mytaskboard.taskboard.board.domain.TaskItem
+import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import javax.inject.Inject
 
 class ToTaskDetailsUiModelMapper @Inject constructor() :

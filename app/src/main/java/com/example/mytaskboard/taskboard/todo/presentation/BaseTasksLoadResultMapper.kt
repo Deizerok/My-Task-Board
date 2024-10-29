@@ -1,8 +1,8 @@
-package com.example.mytaskboard.taskboard.todo
+package com.example.mytaskboard.taskboard.todo.presentation
 
 import com.example.mytaskboard.core.domain.LoadResult
-import com.example.mytaskboard.taskboard.board.domain.TaskItem
-import com.example.mytaskboard.taskboard.board.presentation.adapter.TaskUi
+import com.example.mytaskboard.taskboard.todo.domain.TaskItem
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskUi
 import javax.inject.Inject
 
 class BaseTasksLoadResultMapper @Inject constructor(

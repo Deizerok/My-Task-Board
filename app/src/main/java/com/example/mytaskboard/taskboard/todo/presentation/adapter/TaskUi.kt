@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.board.presentation.adapter
+package com.example.mytaskboard.taskboard.todo.presentation.adapter
 
 import android.graphics.BitmapFactory
 import com.example.mytaskboard.databinding.ViewholderTaskBinding

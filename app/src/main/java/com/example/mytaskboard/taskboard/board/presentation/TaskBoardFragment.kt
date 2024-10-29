@@ -9,9 +9,12 @@ import androidx.fragment.app.viewModels
 import androidx.fragment.app.Fragment
 import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentTaskBoardBinding
+import com.example.mytaskboard.main.Navigation
+import com.example.mytaskboard.menu.MenuScreen
 import com.example.mytaskboard.taskboard.board.presentation.viewpageradapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -19,14 +22,13 @@ class TaskBoardFragment : Fragment() {
 
     private var _binding: FragmentTaskBoardBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: TaskBoardViewModel by viewModels()
-
+    @Inject lateinit var navigation: Navigation.Navigate
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTaskBoardBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -40,7 +42,7 @@ class TaskBoardFragment : Fragment() {
         binding.mainLayout.startAnimation(animation)
 
         binding.mainMenuButton.setOnClickListener {
-            viewModel.goToMenuScreen()
+            navigation.updateUi(MenuScreen)
         }
 
         viewPager.adapter = ViewPagerAdapter(requireActivity())

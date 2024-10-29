@@ -2,8 +2,8 @@ package com.example.mytaskboard.core.data
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.mytaskboard.taskboard.board.data.cache.TaskDao
-import com.example.mytaskboard.taskboard.board.data.cache.TaskEntity
+import com.example.mytaskboard.taskboard.todo.data.cache.TaskDao
+import com.example.mytaskboard.taskboard.todo.data.cache.TaskEntity
 
 @Database(
     version = 1,

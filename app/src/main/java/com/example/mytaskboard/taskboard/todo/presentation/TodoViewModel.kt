@@ -1,23 +1,20 @@
-package com.example.mytaskboard.taskboard.board.presentation
+package com.example.mytaskboard.taskboard.todo.presentation
 
 import com.example.fakestore.core.presentation.ProvideLiveData
 import com.example.mytaskboard.core.domain.LoadResult
 import com.example.mytaskboard.core.presentation.BaseViewModel
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
-import com.example.mytaskboard.menu.MenuScreen
 import com.example.mytaskboard.taskboard.create.presentation.CreateTaskScreen
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsScreen
-import com.example.mytaskboard.taskboard.board.domain.TaskItem
-import com.example.mytaskboard.taskboard.board.domain.TaskRepository
-import com.example.mytaskboard.taskboard.board.presentation.adapter.TaskClickActions
-import com.example.mytaskboard.taskboard.todo.TasksLiveDataWrapper
-import com.example.mytaskboard.taskboard.todo.TasksUiState
+import com.example.mytaskboard.taskboard.todo.domain.TaskItem
+import com.example.mytaskboard.taskboard.todo.domain.TaskRepository
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskClickActions
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class TaskBoardViewModel @Inject constructor(
+class TodoViewModel @Inject constructor(
     private val navigation: Navigation.Navigate,
     private val repository: TaskRepository,
     private val communication: TasksLiveDataWrapper,
@@ -41,10 +38,6 @@ class TaskBoardViewModel @Inject constructor(
 
     override fun goToCreateTask() {
         navigation.updateUi(CreateTaskScreen)
-    }
-
-    fun goToMenuScreen() {
-        navigation.updateUi(MenuScreen)
     }
 
 }

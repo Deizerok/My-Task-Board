@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.todo
+package com.example.mytaskboard.taskboard.todo.presentation
 
 import com.example.mytaskboard.core.presentation.LiveDataWrapper
 import javax.inject.Inject

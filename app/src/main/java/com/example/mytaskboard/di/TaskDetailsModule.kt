@@ -5,7 +5,7 @@ import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsLiveDataWrapper
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsUiModel
 import com.example.mytaskboard.taskboard.details.presentation.ToTaskDetailsUiModelMapper
-import com.example.mytaskboard.taskboard.board.domain.TaskItem
+import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
