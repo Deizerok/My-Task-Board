@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.main.domain
+package com.example.mytaskboard.taskboard.board.domain
 
 import com.example.mytaskboard.core.domain.LoadResult
 
