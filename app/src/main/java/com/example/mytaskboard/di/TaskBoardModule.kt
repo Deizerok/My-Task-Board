@@ -1,13 +1,12 @@
 package com.example.mytaskboard.di
 
 import com.example.mytaskboard.core.domain.LoadResult
-import com.example.mytaskboard.taskboard.main.data.BaseTasksRepository
-import com.example.mytaskboard.taskboard.main.domain.TaskItem
-import com.example.mytaskboard.taskboard.main.domain.TaskRepository
-import com.example.mytaskboard.taskboard.main.presentation.BaseTasksLoadResultMapper
-import com.example.mytaskboard.taskboard.main.presentation.TaskItemToTaskUiMapper
-import com.example.mytaskboard.taskboard.main.presentation.TasksLiveDataWrapper
-import com.example.mytaskboard.taskboard.main.presentation.adapter.TaskUi
+import com.example.mytaskboard.taskboard.todo.data.BaseTasksRepository
+import com.example.mytaskboard.taskboard.todo.domain.TaskItem
+import com.example.mytaskboard.taskboard.todo.domain.TaskRepository
+import com.example.mytaskboard.taskboard.todo.presentation.TaskItemToTaskUiMapper
+import com.example.mytaskboard.taskboard.todo.presentation.TasksLiveDataWrapper
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskUi
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -22,10 +21,6 @@ abstract class TaskBoardModule {
     @Binds
     @ViewModelScoped
     abstract fun bindsTaskRepository(repository: BaseTasksRepository): TaskRepository
-
-    @Binds
-    @ViewModelScoped
-    abstract fun bindResultMapper(mapper: BaseTasksLoadResultMapper): LoadResult.Mapper<TaskItem>
 
     @Binds
     @ViewModelScoped

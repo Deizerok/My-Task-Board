@@ -101,7 +101,6 @@ class CreateTaskFragment : Fragment() {
                     viewModel.createTask(
                         title = titleTextView.text.toString(),
                         description = descriptionTextView.text.toString(),
-                        time = 0,
                         picture = picture!!
                     )
                 }

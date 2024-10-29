@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.main.domain
+package com.example.mytaskboard.taskboard.todo.domain
 
 interface TaskItem {
 
@@ -10,7 +10,7 @@ interface TaskItem {
             id: Int,
             title: String,
             description: String,
-            time: Int,
+            timeLog: List<TimeLogEntry>,
             picture: ByteArray
         ): T
     }
@@ -19,12 +19,12 @@ interface TaskItem {
         private val id: Int,
         private val title: String,
         private val description: String,
-        private val time: Int,
+        private val timeLog: List<TimeLogEntry>,
         private val picture: ByteArray
-        ) : TaskItem {
+    ) : TaskItem {
 
         override fun <T : Any> map(mapper: Mapper<T>): T = mapper.map(
-            id, title, description, time, picture
+            id, title, description, timeLog, picture
         )
     }
 }

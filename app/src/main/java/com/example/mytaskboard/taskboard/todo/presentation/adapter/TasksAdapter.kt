@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.main.presentation.adapter
+package com.example.mytaskboard.taskboard.todo.presentation.adapter
 
 import android.annotation.SuppressLint
 import android.view.ViewGroup

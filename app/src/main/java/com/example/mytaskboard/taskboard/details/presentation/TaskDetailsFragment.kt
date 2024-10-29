@@ -38,7 +38,7 @@ class TaskDetailsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTaskDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -57,25 +57,22 @@ class TaskDetailsFragment : Fragment() {
             viewModel.back()
         }
 
-        binding.StartTimerButton.setOnClickListener {
-            Toast.makeText(requireContext(), "Unfortunately, this feature is still being worked on", Toast.LENGTH_LONG)
-                .show()
+        binding.actionButtonTextView.setOnClickListener {
+            viewModel.stopwatchActionClick()
         }
 
-        binding.deleteTask0Button.setOnClickListener {
+        binding.finishTaskButton.setOnClickListener {
+            viewModel.finishTask(id)
+        }
+
+        binding.deteleTaskButton.setOnClickListener {
             viewModel.deleteTask(id)
-        }
-
-        binding.addTime0Button.setOnClickListener {
-            BottomSheetDetailsFragment.newInstance(id).show(requireActivity().supportFragmentManager, "addTime")
         }
 
         viewModel.liveData().observe(viewLifecycleOwner) {
             it.show(binding)
         }
     }
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()

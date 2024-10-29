@@ -1,13 +1,13 @@
-package com.example.mytaskboard.taskboard.main.presentation
+package com.example.mytaskboard.taskboard.todo.presentation
 
-import com.example.mytaskboard.taskboard.main.presentation.adapter.TaskUi
-import com.example.mytaskboard.taskboard.main.presentation.adapter.TasksAdapter
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskUi
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TasksAdapter
 
 interface TasksUiState {
 
     fun show(adapter: TasksAdapter)
 
-    data class Success(private val tasks: List<TaskUi>) : TasksUiState {
+    data class Data(private val tasks: List<TaskUi>) : TasksUiState {
         override fun show(adapter: TasksAdapter) {
             adapter.update(tasks)
         }

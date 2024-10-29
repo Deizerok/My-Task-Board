@@ -1,25 +1,32 @@
 package com.example.mytaskboard.taskboard.details.presentation
 
+import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
 import com.example.mytaskboard.databinding.FragmentTaskDetailsBinding
+import com.example.mytaskboard.taskboard.todo.domain.TimeLogEntry
 
 class TaskDetailsUiModel(
     private val id: Int,
     private var title: String,
-    private val time: Int,
     private val description: String,
+    private val spentTime: String,
+    private val timeLog: List<TimeLogEntry>,
     private val picture: ByteArray
 ) {
 
-    fun show(binding: FragmentTaskDetailsBinding) {
-        val timeString = time / 60
-        val times = "$timeString hours ${time - timeString * 60} m"
+    @SuppressLint("SetTextI18n")
+    fun show(binding: FragmentTaskDetailsBinding) = with(binding) {
+
         val bitmap = BitmapFactory.decodeByteArray(
             picture, 0, picture.size
         )
-        binding.iconImageView.setImageBitmap(bitmap)
-        binding.titleTextView.text = title
-        binding.descriptionTextView.text = description
-        binding.timeTextView.text = "$times"
+        iconImageView.setImageBitmap(bitmap)
+        titleTextView.text = title
+        descriptionTextView.text = description
+
+
+        // Time log
+        totalTimeTextView.text = spentTime
+        //binding.timeTextView.text = "$times" //todo
     }
 }

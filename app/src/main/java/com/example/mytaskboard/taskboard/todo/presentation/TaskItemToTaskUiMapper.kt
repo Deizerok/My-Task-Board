@@ -1,13 +1,14 @@
-package com.example.mytaskboard.taskboard.details.presentation
+package com.example.mytaskboard.taskboard.todo.presentation
 
 import com.example.mytaskboard.core.presentation.TimeLogToSpentTimeConverter
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import com.example.mytaskboard.taskboard.todo.domain.TimeLogEntry
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskUi
 import javax.inject.Inject
 
-class ToTaskDetailsUiModelMapper @Inject constructor(
+class TaskItemToTaskUiMapper @Inject constructor(
     private val converter: TimeLogToSpentTimeConverter
-) : TaskItem.Mapper<TaskDetailsUiModel> {
+) : TaskItem.Mapper<TaskUi> {
 
     override fun map(
         id: Int,
@@ -15,12 +16,10 @@ class ToTaskDetailsUiModelMapper @Inject constructor(
         description: String,
         timeLog: List<TimeLogEntry>,
         picture: ByteArray
-    ): TaskDetailsUiModel = TaskDetailsUiModel(
+    ): TaskUi = TaskUi.Base(
         id = id,
         title = title,
-        description = description,
-        spentTime = converter.convert(timeLog),
-        timeLog = timeLog,
+        timeSpent = converter.convert(timeLog),
         picture = picture
     )
 }

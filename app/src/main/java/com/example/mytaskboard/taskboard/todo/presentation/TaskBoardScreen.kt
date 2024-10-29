@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.main.presentation
+package com.example.mytaskboard.taskboard.todo.presentation
 
 import com.example.mytaskboard.main.Screen
 

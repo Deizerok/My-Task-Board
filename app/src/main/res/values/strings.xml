@@ -32,4 +32,10 @@
     <string name="just_click_the_star_on_the_github_project">Just click the star on the github project</string>
     <string name="github">GitHub</string>
     <string name="Source_code">Source code</string>
+    <string name="finish_task">Finish Task</string>
+    <string name="time_log">Time log</string>
+    <string name="total">Total:</string>
+    <string name="session_time">Session time</string>
+    <string name="start_session">Start Session</string>
+    <string name="stop_session">Stop Session</string>
 </resources>

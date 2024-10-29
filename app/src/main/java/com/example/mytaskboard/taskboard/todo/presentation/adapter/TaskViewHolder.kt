@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.main.presentation.adapter
+package com.example.mytaskboard.taskboard.todo.presentation.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.View

@@ -1,16 +1,15 @@
-package com.example.mytaskboard.taskboard.main.presentation
+package com.example.mytaskboard.taskboard.todo.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.viewModels
 import androidx.fragment.app.Fragment
 import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentTaskBoardBinding
-import com.example.mytaskboard.taskboard.main.presentation.adapter.TasksAdapter
+import com.example.mytaskboard.taskboard.todo.presentation.adapter.TasksAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -20,7 +19,6 @@ class TaskBoardFragment : Fragment() {
     private var _binding: FragmentTaskBoardBinding? = null
     private val binding get() = _binding!!
     private val viewModel: TaskBoardViewModel by viewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
