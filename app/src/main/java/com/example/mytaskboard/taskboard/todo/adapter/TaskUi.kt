@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.main.presentation.adapter
+package com.example.mytaskboard.taskboard.board.presentation.adapter
 
 import android.graphics.BitmapFactory
 import com.example.mytaskboard.databinding.ViewholderTaskBinding
@@ -10,7 +10,7 @@ interface TaskUi {
 
     fun type(): TaskTypeUi
 
-    fun showTask(binding: ViewholderTaskBinding, adapter: TasksAdapter) = Unit
+    fun showTask(binding: ViewholderTaskBinding, adapter: TodoTasksAdapter) = Unit
 
     fun goToTaskDetails(viewModel: TaskClickActions) = Unit
 
@@ -32,7 +32,7 @@ interface TaskUi {
             viewModel.goToTaskDetails(id = id)
         }
 
-        override fun showTask(binding: ViewholderTaskBinding, adapter: TasksAdapter) {
+        override fun showTask(binding: ViewholderTaskBinding, adapter: TodoTasksAdapter) {
             val timeString = time / 60
             val times = "${timeString} hours ${time - timeString * 60} m"
             val bitmap = BitmapFactory.decodeByteArray(

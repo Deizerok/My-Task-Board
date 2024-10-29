@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.main.domain
+package com.example.mytaskboard.taskboard.board.domain
 
 interface TaskItem {
 

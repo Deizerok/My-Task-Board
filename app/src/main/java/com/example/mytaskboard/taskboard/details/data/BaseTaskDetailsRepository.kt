@@ -1,8 +1,8 @@
 package com.example.mytaskboard.taskboard.details.data
 
 import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
-import com.example.mytaskboard.taskboard.main.data.cache.TasksCacheDataSource
-import com.example.mytaskboard.taskboard.main.domain.TaskItem
+import com.example.mytaskboard.taskboard.board.data.cache.TasksCacheDataSource
+import com.example.mytaskboard.taskboard.board.domain.TaskItem
 import javax.inject.Inject
 
 class BaseTaskDetailsRepository @Inject constructor(

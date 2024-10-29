@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.main.data.cache
+package com.example.mytaskboard.taskboard.board.data.cache
 
 import androidx.room.Dao
 import androidx.room.Insert

@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.main.presentation
+package com.example.mytaskboard.taskboard.board.presentation
 
 import com.example.fakestore.core.presentation.ProvideLiveData
 import com.example.mytaskboard.core.domain.LoadResult
@@ -8,9 +8,11 @@ import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.menu.MenuScreen
 import com.example.mytaskboard.taskboard.create.presentation.CreateTaskScreen
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsScreen
-import com.example.mytaskboard.taskboard.main.domain.TaskItem
-import com.example.mytaskboard.taskboard.main.domain.TaskRepository
-import com.example.mytaskboard.taskboard.main.presentation.adapter.TaskClickActions
+import com.example.mytaskboard.taskboard.board.domain.TaskItem
+import com.example.mytaskboard.taskboard.board.domain.TaskRepository
+import com.example.mytaskboard.taskboard.board.presentation.adapter.TaskClickActions
+import com.example.mytaskboard.taskboard.todo.TasksLiveDataWrapper
+import com.example.mytaskboard.taskboard.todo.TasksUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
