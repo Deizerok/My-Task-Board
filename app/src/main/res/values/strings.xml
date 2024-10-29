@@ -32,4 +32,9 @@
     <string name="just_click_the_star_on_the_github_project">Just click the star on the github project</string>
     <string name="github">GitHub</string>
     <string name="Source_code">Source code</string>
+    <string name="status">Status</string>
+    <string name="ompleted_tasks">Сompleted tasks</string>
+    <string name="active_tasks">Active Tasks</string>
+    <string name="to_do">To do</string>
+    <string name="done">Done</string>
 </resources>

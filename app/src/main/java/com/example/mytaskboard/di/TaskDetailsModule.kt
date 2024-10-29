@@ -1,18 +1,11 @@
 package com.example.mytaskboard.di
 
-import com.example.mytaskboard.core.domain.LoadResult
 import com.example.mytaskboard.taskboard.details.data.BaseTaskDetailsRepository
 import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsLiveDataWrapper
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsUiModel
 import com.example.mytaskboard.taskboard.details.presentation.ToTaskDetailsUiModelMapper
-import com.example.mytaskboard.taskboard.main.data.BaseTasksRepository
-import com.example.mytaskboard.taskboard.main.domain.TaskItem
-import com.example.mytaskboard.taskboard.main.domain.TaskRepository
-import com.example.mytaskboard.taskboard.main.presentation.BaseTasksLoadResultMapper
-import com.example.mytaskboard.taskboard.main.presentation.TaskItemToTaskUiMapper
-import com.example.mytaskboard.taskboard.main.presentation.TasksLiveDataWrapper
-import com.example.mytaskboard.taskboard.main.presentation.adapter.TaskUi
+import com.example.mytaskboard.taskboard.board.domain.TaskItem
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

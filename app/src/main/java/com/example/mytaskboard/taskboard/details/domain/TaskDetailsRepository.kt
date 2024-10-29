@@ -1,6 +1,6 @@
 package com.example.mytaskboard.taskboard.details.domain
 
-import com.example.mytaskboard.taskboard.main.domain.TaskItem
+import com.example.mytaskboard.taskboard.board.domain.TaskItem
 
 interface TaskDetailsRepository {
 
