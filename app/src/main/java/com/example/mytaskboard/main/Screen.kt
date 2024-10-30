@@ -2,6 +2,7 @@ package com.example.mytaskboard.main
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 interface Screen {
 
@@ -50,6 +51,18 @@ interface Screen {
         }
 
         protected open fun fragment(): Fragment = clasz.getDeclaredConstructor().newInstance()
+    }
+
+    abstract class BottomSheet(private val clasz: Class<out Fragment>) : Screen {
+
+        override fun show(containerId: Int, supportFragmentManager: FragmentManager) {
+            fragment().show(
+                supportFragmentManager,
+                clasz.simpleName
+            )
+        }
+
+        abstract fun fragment(): BottomSheetDialogFragment
     }
 
     object Pop : Screen {

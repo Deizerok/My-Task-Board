@@ -91,11 +91,9 @@ class CreateTaskFragment : Fragment() {
             if (titleTextView.text.toString() == "" && descriptionTextView.text.toString() == "") {
                 titleTextView.error = "There can be no emptiness here"
                 descriptionTextView.error = "There can be no emptiness here"
-            } else if (descriptionTextView.text.toString() == "") {
-                descriptionTextView.error = "There can be no emptiness here"
             } else {
                 if (picture == null) {
-                    Toast.makeText(requireContext(), "Upload picture please", Toast.LENGTH_LONG)
+                    Toast.makeText(requireContext(), "Choose icon", Toast.LENGTH_LONG)
                         .show()
                 } else {
                     viewModel.createTask(

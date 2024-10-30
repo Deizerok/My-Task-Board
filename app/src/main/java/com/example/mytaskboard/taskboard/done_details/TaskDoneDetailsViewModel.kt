@@ -26,10 +26,12 @@ class TaskDoneDetailsViewModel @Inject constructor(
         taskLiveDataWrapper.updateUi(taskItem.map(mapper))
     })
 
-    fun finishTask(id: Int) = runAsync({
-        repository.finishTask(id)
-    }) {
-        navigation.updateUi(TaskBoardScreen)
+    fun openBottomSheetRestore(id: Int) {
+        navigation.updateUi(BottomSheetRestoreTaskScreen(id))
+    }
+
+    fun openBottomSheetDelete(id: Int) {
+        navigation.updateUi(BottomSheetDeleteTaskScreen(id))
     }
 
     fun restoreTask(id: Int) = runAsync({

@@ -2,8 +2,8 @@ package com.example.mytaskboard.taskboard.done_details
 
 import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
+import android.view.View
 import com.example.mytaskboard.databinding.FragmentDoneTaskDetailsBinding
-import com.example.mytaskboard.databinding.FragmentTaskDetailsBinding
 import com.example.mytaskboard.taskboard.todo.domain.TimeLogEntry
 
 class TaskDoneDetailsUiModel(
@@ -23,8 +23,11 @@ class TaskDoneDetailsUiModel(
         )
         iconImageView.setImageBitmap(bitmap)
         titleTextView.text = title
-        descriptionTextView.text = description
-
+        if (description == "") {
+            descriptionLinearLayout.visibility = View.GONE
+        } else {
+            descriptionTextView.text = description
+        }
 
         // Time log
         totalTimeTextView.text = spentTime

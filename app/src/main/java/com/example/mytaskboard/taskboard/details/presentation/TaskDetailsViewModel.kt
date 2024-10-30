@@ -8,6 +8,7 @@ import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
 import com.example.mytaskboard.taskboard.details.presentation.stopwatch.Stopwatch
 import com.example.mytaskboard.taskboard.details.presentation.stopwatch.StopwatchUiState
+import com.example.mytaskboard.taskboard.done_details.BottomSheetDeleteTaskScreen
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import com.example.mytaskboard.taskboard.todo.presentation.TaskBoardScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -81,10 +82,12 @@ class TaskDetailsViewModel @Inject constructor(
         navigation.updateUi(TaskBoardScreen)
     }
 
-    fun deleteTask(id: Int) = runAsync({
-        repository.deleteByTaskId(id)
-    }) {
-        navigation.updateUi(TaskBoardScreen)
+    fun openBottomSheetFinish(id: Int) {
+        navigation.updateUi(BottomSheetFinishTaskScreen(id))
+    }
+
+    fun openBottomSheetDelete(id: Int) {
+        navigation.updateUi(BottomSheetDeleteTaskScreen(id))
     }
 
     fun back() = navigation.updateUi(TaskBoardScreen)
