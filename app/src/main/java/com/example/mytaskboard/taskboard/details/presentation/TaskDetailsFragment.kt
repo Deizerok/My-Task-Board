@@ -59,7 +59,7 @@ class TaskDetailsFragment : Fragment() {
         }
 
         binding.actionButtonTextView.setOnClickListener {
-            viewModel.stopwatchActionClick()
+            viewModel.stopwatchActionClick(id)
         }
 
         binding.finishTaskButton.setOnClickListener {
