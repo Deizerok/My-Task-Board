@@ -1,6 +1,8 @@
 package com.example.mytaskboard.taskboard.todo_details.presentation
 
+import com.example.mytaskboard.R
 import com.example.mytaskboard.core.data.DateConverter
+import com.example.mytaskboard.core.presentation.ManageResource
 import com.example.mytaskboard.core.presentation.TimeLogToSpentTimeConverter
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import com.example.mytaskboard.taskboard.todo.domain.TimeLogEntry
@@ -8,7 +10,8 @@ import javax.inject.Inject
 
 class ToTaskDetailsUiModelMapper @Inject constructor(
     private val spentTimeConverter: TimeLogToSpentTimeConverter,
-    private val dateConverter: DateConverter
+    private val dateConverter: DateConverter,
+    private val manageResource: ManageResource.Base,
 ) : TaskItem.Mapper<TaskTodoDetailsUiModel> {
 
     override fun map(
@@ -38,7 +41,7 @@ class ToTaskDetailsUiModelMapper @Inject constructor(
                 TimeLogEntryUi.Base(time = "$date    + $spentTime")
             }
             .ifEmpty {
-                listOf(TimeLogEntryUi.NoEntries)
+                listOf(TimeLogEntryUi.Base(time = manageResource.string(R.string.no_entries)))
             },
         picture = picture
     )
