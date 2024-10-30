@@ -6,5 +6,5 @@ data class BottomSheetDeleteTaskScreen(
     private val taskId: Int,
 ) : Screen.BottomSheet(BottomSheetDeleteTaskFragment::class.java) {
 
-    override fun fragment() = BottomSheetFinishTaskFragment.newInstance(taskId)
+    override fun fragment() = BottomSheetDeleteTaskFragment.newInstance(taskId)
 }

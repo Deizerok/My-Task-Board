@@ -3,11 +3,11 @@ package com.example.mytaskboard.taskboard.todo_details.presentation
 import androidx.fragment.app.Fragment
 import com.example.mytaskboard.main.Screen
 
-data class TaskDetailsScreen(
+data class TaskTodoDetailsScreen(
     private val taskId: Int,
-) : Screen.Add(TaskDetailsFragment::class.java) {
+) : Screen.Add(TaskTodoDetailsFragment::class.java) {
 
     override fun fragment(): Fragment {
-        return TaskDetailsFragment.newInstance(taskId)
+        return TaskTodoDetailsFragment.newInstance(taskId)
     }
 }

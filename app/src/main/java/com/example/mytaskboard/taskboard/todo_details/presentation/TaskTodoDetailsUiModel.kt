@@ -6,7 +6,7 @@ import android.view.View
 import com.example.mytaskboard.databinding.FragmentTaskDetailsBinding
 import com.example.mytaskboard.taskboard.todo_details.presentation.adapter.TimeLogAdapter
 
-data class TaskDetailsUiModel(
+data class TaskTodoDetailsUiModel(
     private val id: Int,
     private var title: String,
     private val description: String,

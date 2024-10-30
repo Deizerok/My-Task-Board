@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentDoneTaskDetailsBinding
+import com.example.mytaskboard.taskboard.todo_details.presentation.adapter.TimeLogAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -48,6 +49,8 @@ class TaskDoneDetailsFragment : Fragment() {
         binding.mainDetailsLayout.startAnimation(animationFadeIn)
         viewModel.init(id)
 
+        val timeLogAdapter = TimeLogAdapter()
+        binding.timeLogRecyclerView.adapter = timeLogAdapter
 
         binding.backToMainButton.setOnClickListener {
             binding.mainDetailsLayout.startAnimation(animationFadeOut)

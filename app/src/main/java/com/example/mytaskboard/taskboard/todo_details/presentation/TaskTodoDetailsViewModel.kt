@@ -9,15 +9,15 @@ import com.example.mytaskboard.core.presentation.BaseViewModel
 import com.example.mytaskboard.core.presentation.MessageLiveDataWrapper
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
+import com.example.mytaskboard.taskboard.core.BottomSheetDeleteTaskScreen
+import com.example.mytaskboard.taskboard.core.BottomSheetFinishTaskScreen
+import com.example.mytaskboard.taskboard.todo.domain.TaskItem
+import com.example.mytaskboard.taskboard.todo.presentation.TaskBoardScreen
 import com.example.mytaskboard.taskboard.todo_details.domain.TaskDetailsRepository
 import com.example.mytaskboard.taskboard.todo_details.presentation.stopwatch.Stopwatch
 import com.example.mytaskboard.taskboard.todo_details.presentation.stopwatch.StopwatchUiState
 import com.example.mytaskboard.taskboard.todo_details.presentation.stopwatch.StopwatchWorker
 import com.example.mytaskboard.taskboard.todo_details.presentation.stopwatch.StopwatchWorker.Companion.KEY_TASK_TITLE
-import com.example.mytaskboard.taskboard.core.BottomSheetDeleteTaskScreen
-import com.example.mytaskboard.taskboard.core.BottomSheetFinishTaskScreen
-import com.example.mytaskboard.taskboard.todo.domain.TaskItem
-import com.example.mytaskboard.taskboard.todo.presentation.TaskBoardScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.filter
@@ -26,15 +26,15 @@ import java.util.Date
 import javax.inject.Inject
 
 @HiltViewModel
-class TaskDetailsViewModel @Inject constructor(
+class TaskTodoDetailsViewModel @Inject constructor(
     private val workManager: WorkManager,
     private val stopwatch: Stopwatch,
     private val stopwatchLiveDataWrapper: StopwatchLiveDataWrapper,
-    private val taskLiveDataWrapper: TaskDetailsLiveDataWrapper,
+    private val taskLiveDataWrapper: TaskTodoDetailsLiveDataWrapper,
     private val messageLiveDataWrapper: MessageLiveDataWrapper,
     private val navigation: Navigation.Navigate,
     private val repository: TaskDetailsRepository,
-    private val mapper: TaskItem.Mapper<TaskDetailsUiModel>,
+    private val mapper: TaskItem.Mapper<TaskTodoDetailsUiModel>,
     runAsync: RunAsync
 ) : BaseViewModel(runAsync) {
 
@@ -137,7 +137,7 @@ class TaskDetailsViewModel @Inject constructor(
 
     fun back() = navigation.updateUi(TaskBoardScreen)
 
-    fun taskLiveData(): LiveData<TaskDetailsUiModel> = taskLiveDataWrapper.liveData()
+    fun taskLiveData(): LiveData<TaskTodoDetailsUiModel> = taskLiveDataWrapper.liveData()
     fun stopwatchLiveData(): LiveData<StopwatchUiState> = stopwatchLiveDataWrapper.liveData()
     fun messageLiveData(): LiveData<String> = messageLiveDataWrapper.liveData()
 

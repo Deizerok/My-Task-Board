@@ -4,14 +4,15 @@ import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
 import android.view.View
 import com.example.mytaskboard.databinding.FragmentDoneTaskDetailsBinding
-import com.example.mytaskboard.taskboard.todo.domain.TimeLogEntry
+import com.example.mytaskboard.taskboard.todo_details.presentation.TimeLogEntryUi
+import com.example.mytaskboard.taskboard.todo_details.presentation.adapter.TimeLogAdapter
 
 class TaskDoneDetailsUiModel(
     private val id: Int,
     private var title: String,
     private val description: String,
     private val spentTime: String,
-    private val timeLog: List<TimeLogEntry>,
+    private val timeLog: List<TimeLogEntryUi>,
     private val picture: ByteArray
 ) {
 
@@ -31,6 +32,6 @@ class TaskDoneDetailsUiModel(
 
         // Time log
         totalTimeTextView.text = spentTime
-        //binding.timeTextView.text = "$times" //todo
+        (timeLogRecyclerView.adapter as TimeLogAdapter).update(timeLog)
     }
 }

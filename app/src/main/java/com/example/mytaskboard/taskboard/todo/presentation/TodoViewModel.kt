@@ -5,11 +5,11 @@ import com.example.mytaskboard.core.presentation.BaseViewModel
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.taskboard.create.presentation.CreateTaskScreen
-import com.example.mytaskboard.taskboard.todo_details.presentation.TaskDetailsScreen
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import com.example.mytaskboard.taskboard.todo.domain.TaskRepository
 import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskClickActions
 import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskUi
+import com.example.mytaskboard.taskboard.todo_details.presentation.TaskTodoDetailsScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -41,7 +41,7 @@ class TodoViewModel @Inject constructor(
     }
 
     override fun goToTaskDetails(id: Int) {
-        navigation.updateUi(TaskDetailsScreen(id))
+        navigation.updateUi(TaskTodoDetailsScreen(id))
     }
 
     override fun goToCreateTask() {

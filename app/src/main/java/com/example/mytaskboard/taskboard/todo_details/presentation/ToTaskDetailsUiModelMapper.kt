@@ -9,7 +9,7 @@ import javax.inject.Inject
 class ToTaskDetailsUiModelMapper @Inject constructor(
     private val spentTimeConverter: TimeLogToSpentTimeConverter,
     private val dateConverter: DateConverter
-) : TaskItem.Mapper<TaskDetailsUiModel> {
+) : TaskItem.Mapper<TaskTodoDetailsUiModel> {
 
     override fun map(
         id: Int,
@@ -17,7 +17,7 @@ class ToTaskDetailsUiModelMapper @Inject constructor(
         description: String,
         timeLog: List<TimeLogEntry>,
         picture: ByteArray
-    ) = TaskDetailsUiModel(
+    ) = TaskTodoDetailsUiModel(
         id = id,
         title = title,
         description = description,

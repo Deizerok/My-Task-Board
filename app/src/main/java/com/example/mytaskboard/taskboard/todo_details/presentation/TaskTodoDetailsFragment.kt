@@ -15,12 +15,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class TaskDetailsFragment : Fragment() {
+class TaskTodoDetailsFragment : Fragment() {
 
     companion object {
         const val KEY_ID = "key_id"
 
-        fun newInstance(id: Int) = TaskDetailsFragment().apply {
+        fun newInstance(id: Int) = TaskTodoDetailsFragment().apply {
             arguments = Bundle().apply {
                 putInt(KEY_ID, id)
             }
@@ -30,7 +30,7 @@ class TaskDetailsFragment : Fragment() {
     private var _binding: FragmentTaskDetailsBinding? = null
     private val binding: FragmentTaskDetailsBinding
         get() = _binding!!
-    private val viewModel: TaskDetailsViewModel by viewModels()
+    private val viewModel: TaskTodoDetailsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

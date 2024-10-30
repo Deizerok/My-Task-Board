@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.mytaskboard.databinding.BottomSheetDeleteTaskBinding
-import com.example.mytaskboard.taskboard.todo_details.presentation.TaskDetailsViewModel
+import com.example.mytaskboard.taskboard.todo_details.presentation.TaskTodoDetailsViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,7 +24,7 @@ class BottomSheetDeleteTaskFragment : BottomSheetDialogFragment() {
     }
 
     private lateinit var binding: BottomSheetDeleteTaskBinding
-    private val viewModel: TaskDetailsViewModel by viewModels()
+    private val viewModel: TaskTodoDetailsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
