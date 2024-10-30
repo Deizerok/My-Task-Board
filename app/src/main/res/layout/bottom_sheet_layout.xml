@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:padding="12dp"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bottom_sheet_background"
     android:orientation="vertical">
 
@@ -10,64 +10,91 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/addTimeTextInputLayout"
+    <TextView
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginBottom="12dp"
+        android:text="@string/are_you_sure_to_finish_the_task"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="true"
-        android:layout_margin="8dp"
-        android:textColorHint="#BEBEBE"
-        app:boxBackgroundColor="#2E2E2E"
-        app:boxStrokeColor="@color/primary_color"
-        app:boxStrokeWidth="1dp"
-        app:counterTextColor="@color/primary_color"
-        app:errorTextColor="@color/primary_color"
-        app:hintTextColor="@color/primary_color">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/addTimeInputEditText"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:drawablePadding="12dp"
-            android:fontFamily="@font/poppins"
-            android:inputType="number"
-            android:hint="@string/example_20_40_60"
-            android:textColor="@color/primary_color"
-            android:textColorHint="@color/primary_color" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
-        android:id="@+id/addTimeBottomSheetButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:background="@drawable/standart_button_style"
-        android:backgroundTint="@color/button_color_2"
-        android:elevation="3dp"
-        android:gravity="left"
-        android:padding="12dp">
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/radius_8"
-            android:gravity="center">
+            android:id="@+id/finishTaskButton"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_weight="1"
+            android:background="@drawable/standart_button_style"
+            android:backgroundTint="@color/content_background"
+            android:elevation="3dp"
+            android:gravity="center_vertical">
 
-            <ImageView
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:src="@drawable/plus_2_icon" />
+            <LinearLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/radius_8"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/finish_icon" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/finish_task"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/add_time"
-            android:textColor="@color/white"
-            android:textSize="14dp" />
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="0dp" />
+
+        <LinearLayout
+            android:id="@+id/cancelTaskButton"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_weight="1"
+            android:background="@drawable/standart_button_style"
+            android:backgroundTint="@color/content_background"
+            android:elevation="3dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/radius_8"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/minus_icon" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/cancel"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

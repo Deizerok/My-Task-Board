@@ -1,18 +1,15 @@
 package com.example.mytaskboard.di
 
-import com.example.mytaskboard.core.domain.LoadResult
-import com.example.mytaskboard.taskboard.details.data.BaseTaskDetailsRepository
-import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
-import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsLiveDataWrapper
-import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsUiModel
-import com.example.mytaskboard.taskboard.details.presentation.ToTaskDetailsUiModelMapper
-import com.example.mytaskboard.taskboard.main.data.BaseTasksRepository
-import com.example.mytaskboard.taskboard.main.domain.TaskItem
-import com.example.mytaskboard.taskboard.main.domain.TaskRepository
-import com.example.mytaskboard.taskboard.main.presentation.BaseTasksLoadResultMapper
-import com.example.mytaskboard.taskboard.main.presentation.TaskItemToTaskUiMapper
-import com.example.mytaskboard.taskboard.main.presentation.TasksLiveDataWrapper
-import com.example.mytaskboard.taskboard.main.presentation.adapter.TaskUi
+import com.example.mytaskboard.taskboard.done_details.TaskDoneDetailsLiveDataWrapper
+import com.example.mytaskboard.taskboard.done_details.TaskDoneDetailsUiModel
+import com.example.mytaskboard.taskboard.done_details.ToDoneTaskDetailsUiModelMapper
+import com.example.mytaskboard.taskboard.todo.domain.TaskItem
+import com.example.mytaskboard.taskboard.todo_details.data.BaseTaskDetailsRepository
+import com.example.mytaskboard.taskboard.todo_details.domain.TaskDetailsRepository
+import com.example.mytaskboard.taskboard.todo_details.presentation.StopwatchLiveDataWrapper
+import com.example.mytaskboard.taskboard.todo_details.presentation.TaskTodoDetailsLiveDataWrapper
+import com.example.mytaskboard.taskboard.todo_details.presentation.TaskTodoDetailsUiModel
+import com.example.mytaskboard.taskboard.todo_details.presentation.ToTaskDetailsUiModelMapper
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -30,9 +27,21 @@ abstract class TaskDetailsModule {
 
     @Binds
     @ViewModelScoped
-    abstract fun mapper(mapper: ToTaskDetailsUiModelMapper): TaskItem.Mapper<TaskDetailsUiModel>
+    abstract fun mapper(mapper: ToTaskDetailsUiModelMapper): TaskItem.Mapper<TaskTodoDetailsUiModel>
 
     @Binds
     @ViewModelScoped
-    abstract fun bindTaskDetailsLiveDataWrapper(liveDataWrapper: TaskDetailsLiveDataWrapper.Base): TaskDetailsLiveDataWrapper
+    abstract fun mapperToDoneTaskDetailsUiModelMapper(mapper: ToDoneTaskDetailsUiModelMapper): TaskItem.Mapper<TaskDoneDetailsUiModel>
+
+    @Binds
+    @ViewModelScoped
+    abstract fun taskDetailsLiveDataWrapper(taskLiveDataWrapper: TaskTodoDetailsLiveDataWrapper.Base): TaskTodoDetailsLiveDataWrapper
+
+    @Binds
+    @ViewModelScoped
+    abstract fun stopwatchLiveDataWrapper(stopwatchLiveDataWrapper: StopwatchLiveDataWrapper.Base): StopwatchLiveDataWrapper
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindTaskDoneDetailsLiveDataWrapper(liveDataWrapper: TaskDoneDetailsLiveDataWrapper.Base): TaskDoneDetailsLiveDataWrapper
 }

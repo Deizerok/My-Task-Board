@@ -2,8 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary_color">#518D5E</color>
+    <color name="primary_color">#615AB8</color>
     <color name="background_app">#131313</color>
     <color name="button_color_2">#29282B</color>
+    <color name="content_background">#29282B</color>
+    <color name="button_text">#D9D9D9</color>
     <color name="icon_task_color">#4A4A51</color>
 </resources>

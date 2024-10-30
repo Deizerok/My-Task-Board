@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">My Task Board</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="create_task">Create Task</string>
     <string name="your_tasks">Your Tasks:</string>
-    <string name="search_task">Search Task...</string>
+    <string name="search_task">Search for tasks</string>
     <string name="you_don_t_have_tasks_create_one">You don\'t have tasks, create one!</string>
     <string name="description">Description</string>
     <string name="add_time">Add Time</string>
@@ -14,8 +13,8 @@
     <string name="start_timer">Start Timer</string>
     <string name="options">options</string>
     <string name="back">Back</string>
-    <string name="name_task">Name Task*</string>
-    <string name="description_">Description*</string>
+    <string name="name_task">Name Task</string>
+    <string name="description_">Description</string>
     <string name="picture">Picture</string>
     <string name="for_example_you_can_leave_links_to_important_materials_in_the_description">For example, you can leave links to important materials in the description!</string>
     <string name="plus">+</string>
@@ -23,7 +22,7 @@
     <string name="fab_button">FAB button</string>
     <string name="time_spent">Time spent</string>
     <string name="task">Task</string>
-    <string name="choose_an_icon">Choose an icon:</string>
+    <string name="choose_an_icon">Icon:</string>
     <string name="support_the_project">Support the project</string>
     <string name="menu">Menu</string>
     <string name="example_20_40_60">For example 5m, 15m, 30m</string>
@@ -32,4 +31,29 @@
     <string name="just_click_the_star_on_the_github_project">Just click the star on the github project</string>
     <string name="github">GitHub</string>
     <string name="Source_code">Source code</string>
+    <string name="finish_task">Finish Task</string>
+    <string name="time_log">Time log</string>
+    <string name="total">Total:</string>
+    <string name="session_time">Session time</string>
+    <string name="start_session">Start Session</string>
+    <string name="stop_session">Stop Session</string>
+    <string name="status">Status</string>
+    <string name="ompleted_tasks">Сompleted tasks</string>
+    <string name="active_tasks">Active Tasks</string>
+    <string name="to_do">To do</string>
+    <string name="done">Done</string>
+    <string name="stopwatch">Stopwatch</string>
+    <string name="no_entries_exist">No entries exist</string>
+    <string name="cancel">Cancel</string>
+    <string name="restore_task">Restore Task</string>
+    <string name="are_you_sure_to_delete_the_task">Are you sure to delete the task?</string>
+    <string name="are_you_sure_to_finish_the_task">Are you sure to finish the task?</string>
+    <string name="choose_icon">Choose icon</string>
+    <string name="there_can_be_no_emptiness_here">There can be no emptiness here</string>
+    <string name="session_lasted_less_than_10_seconds">Session lasted less than 10 seconds</string>
+    <string name="stop_session_in_another_task_before_starting_a_new_one">Stop session in another task before starting a new one</string>
+    <string name="before_finishing_the_task_stop_a_session">Before finishing the task stop a session</string>
+    <string name="before_deleting_the_task_stop_a_session">Before deleting the task stop a session</string>
+    <string name="no_entries">No entries</string>
+    <string name="are_you_sure_to_restore_the_task">Are you sure to restore the task?</string>
 </resources>
