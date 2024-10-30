@@ -7,7 +7,5 @@ import javax.inject.Inject
 interface TaskDetailsLiveDataWrapper : LiveDataWrapper<TaskDetailsUiModel> {
 
     class Base @Inject constructor() : TaskDetailsLiveDataWrapper,
-        LiveDataWrapper.Single<TaskDetailsUiModel>() {
-
-    }
+        LiveDataWrapper.Single<TaskDetailsUiModel>()
 }

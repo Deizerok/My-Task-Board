@@ -1,7 +1,6 @@
 package com.example.mytaskboard.core.presentation
 
 import androidx.lifecycle.ViewModel
-import com.example.mytaskboard.core.presentation.RunAsync
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -14,7 +13,7 @@ abstract class BaseViewModel(
 
     fun <T : Any> runAsync(
         backgroundBlock: suspend () -> T,
-        uiBlock: (T) -> Unit
+        uiBlock: (T) -> Unit = {}
     ) {
         runAsync.start(
             backgroundBlock,

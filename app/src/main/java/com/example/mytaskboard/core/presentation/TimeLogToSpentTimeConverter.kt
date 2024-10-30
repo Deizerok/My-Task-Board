@@ -14,9 +14,9 @@ interface TimeLogToSpentTimeConverter {
             var minutes = 0
             var hours = 0
             timeLog.forEach {
-                seconds = it.seconds
-                minutes = it.minutes
-                hours = it.hours
+                seconds += it.seconds
+                minutes += it.minutes
+                hours += it.hours
             }
 
             minutes += seconds / 60

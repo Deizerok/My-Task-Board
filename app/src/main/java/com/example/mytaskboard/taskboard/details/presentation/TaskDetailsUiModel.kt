@@ -3,14 +3,14 @@ package com.example.mytaskboard.taskboard.details.presentation
 import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
 import com.example.mytaskboard.databinding.FragmentTaskDetailsBinding
-import com.example.mytaskboard.taskboard.todo.domain.TimeLogEntry
+import com.example.mytaskboard.taskboard.details.presentation.adapter.TimeLogAdapter
 
-class TaskDetailsUiModel(
+data class TaskDetailsUiModel(
     private val id: Int,
     private var title: String,
     private val description: String,
     private val spentTime: String,
-    private val timeLog: List<TimeLogEntry>,
+    private val timeLog: List<TimeLogEntryUi>,
     private val picture: ByteArray
 ) {
 
@@ -27,6 +27,6 @@ class TaskDetailsUiModel(
 
         // Time log
         totalTimeTextView.text = spentTime
-        //binding.timeTextView.text = "$times" //todo
+        (timeLogRecyclerView.adapter as TimeLogAdapter).update(timeLog)
     }
 }

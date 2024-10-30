@@ -18,14 +18,8 @@ interface TaskTypeUi {
         )
     }
 
-    object Progress : TaskTypeUi {
-        override fun createViewHolder(parent: ViewGroup): TodoTaskViewHolder {
-            TODO("Not yet implemented")
-        }
-
-    }
-
     object Empty : TaskTypeUi {
+
         override fun createViewHolder(parent: ViewGroup): TodoTaskViewHolder =
             TodoTaskViewHolder.Empty(
                 ViewholderNoTaskBinding.inflate(
@@ -33,5 +27,4 @@ interface TaskTypeUi {
                 )
             )
     }
-
 }

@@ -48,6 +48,11 @@ android {
 
 dependencies {
 
+    // WorkManager
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.androidx.hilt.work)
+    kapt(libs.androidx.hilt.compiler)
+
     // by viewModel
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.fragment.ktx)

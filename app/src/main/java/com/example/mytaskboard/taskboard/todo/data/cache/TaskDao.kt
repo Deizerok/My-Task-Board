@@ -13,6 +13,7 @@ interface TaskDao {
     @Transaction
     @Query("SELECT * FROM tasks WHERE finished = 0")
     suspend fun todoTasks(): List<TaskWithLogs>
+
     @Transaction
     @Query("SELECT * FROM tasks WHERE finished = 1")
     suspend fun doneTasks(): List<TaskWithLogs>
@@ -22,6 +23,9 @@ interface TaskDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addTask(task: TaskEntity)
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun addTimeLogEntry(timeLogEntryEntity: TimeLogEntryEntity)
 
     @Update
     suspend fun updateTask(task: TaskEntity)

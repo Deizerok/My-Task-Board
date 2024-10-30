@@ -18,10 +18,4 @@ interface TasksUiState {
             adapter.update(listOf(TaskUi.Empty))
         }
     }
-
-    object Progress : TasksUiState {
-        override fun show(adapter: TodoTasksAdapter) {
-            adapter.update(listOf(TaskUi.Progress))
-        }
-    }
 }

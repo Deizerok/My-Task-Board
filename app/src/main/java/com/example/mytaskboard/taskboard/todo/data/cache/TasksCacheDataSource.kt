@@ -11,19 +11,37 @@ interface TasksCacheDataSource {
 
     suspend fun addTask(task: TaskEntity)
 
+    suspend fun addSessionTime(taskId: Int, date: Long, hours: Int, minutes: Int, seconds: Int)
+
     suspend fun finishedTask(id: Int)
 
     suspend fun deleteByTaskId(id: Int)
 
-    class Base @Inject constructor(
-        private val dao: TaskDao,
-    ) : TasksCacheDataSource {
+    class Base @Inject constructor(private val dao: TaskDao) : TasksCacheDataSource {
 
         override suspend fun tasks(): List<TaskWithLogs> = dao.todoTasks()
 
         override suspend fun task(id: Int): TaskWithLogs = dao.task(id)
 
         override suspend fun addTask(task: TaskEntity) = dao.addTask(task)
+
+        override suspend fun addSessionTime(
+            taskId: Int,
+            date: Long,
+            hours: Int,
+            minutes: Int,
+            seconds: Int
+        ) {
+            dao.addTimeLogEntry(
+                TimeLogEntryEntity(
+                    taskId = taskId,
+                    date = date,
+                    hours = hours,
+                    minutes = minutes,
+                    seconds = seconds
+                )
+            )
+        }
 
         override suspend fun finishedTask(id: Int) {
             val taskEntity = dao.task(id)
