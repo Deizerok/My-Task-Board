@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_language_dropdown_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_task"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <!-- Each item will be added programmatically -->
+</LinearLayout>
