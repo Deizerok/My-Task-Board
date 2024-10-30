@@ -43,4 +43,6 @@
     <string name="active_tasks">Active Tasks</string>
     <string name="to_do">To do</string>
     <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="restore_task">Restore Task</string>
 </resources>

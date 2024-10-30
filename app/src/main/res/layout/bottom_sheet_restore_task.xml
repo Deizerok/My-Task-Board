@@ -17,7 +17,7 @@
         android:textSize="16sp"
         android:gravity="center"
         android:textColor="@color/white"
-        android:text="Are you sure to finish the task?"
+        android:text="Are you sure to restore the task?"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="@string/finish_task"
+                android:text="@string/restore_task"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
         </LinearLayout>
