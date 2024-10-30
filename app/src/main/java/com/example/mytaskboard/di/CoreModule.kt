@@ -3,6 +3,7 @@ package com.example.mytaskboard.di
 import android.content.Context
 import androidx.work.WorkManager
 import com.example.mytaskboard.core.data.DateConverter
+import com.example.mytaskboard.core.presentation.ManageResource
 import com.example.mytaskboard.core.presentation.MessageLiveDataWrapper
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.core.presentation.TimeLogToSpentTimeConverter
@@ -19,6 +20,9 @@ abstract class CoreModule {
 
     @Binds
     abstract fun bindRunAsync(runAsync: RunAsync.Base): RunAsync
+
+    @Binds
+    abstract fun bindManageResource(resource: ManageResource.Base): ManageResource
 
     @Binds
     abstract fun timeLogConverter(converter: TimeLogToSpentTimeConverter.Base): TimeLogToSpentTimeConverter

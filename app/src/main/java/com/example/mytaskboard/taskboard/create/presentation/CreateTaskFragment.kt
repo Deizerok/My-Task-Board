@@ -89,11 +89,14 @@ class CreateTaskFragment : Fragment() {
 
         binding.createTask0Button.setOnClickListener {
             if (titleTextView.text.toString() == "" && descriptionTextView.text.toString() == "") {
-                titleTextView.error = "There can be no emptiness here"
-                descriptionTextView.error = "There can be no emptiness here"
+                titleTextView.error = getString(R.string.there_can_be_no_emptiness_here)
             } else {
                 if (picture == null) {
-                    Toast.makeText(requireContext(), "Choose icon", Toast.LENGTH_LONG)
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.choose_icon),
+                        Toast.LENGTH_LONG
+                    )
                         .show()
                 } else {
                     viewModel.createTask(
