@@ -2,7 +2,7 @@
 - This is a My-Task-Board, you can create a task in it, and after working on it, 
 you can add the minutes spent on the task, 
 after completing it, you can simply delete it!
-- **Downlaod Application**: [link](https://github.com/Deizerok/My-Task-Board/releases/tag/v1.0)
+- **Downlaod Application**: [link](https://github.com/Deizerok/My-Task-Board/releases/tag/v1.1)
 - ## Features
 - Create Task
 - Start StopWatch for task (Start Session)
