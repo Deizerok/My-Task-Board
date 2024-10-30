@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 interface TasksCacheDataSource {
 
-    suspend fun tasks(): List<TaskWithLogs>
+    suspend fun todoTasks(): List<TaskWithLogs>
 
     suspend fun task(id: Int): TaskWithLogs
 
@@ -17,9 +17,18 @@ interface TasksCacheDataSource {
 
     suspend fun deleteByTaskId(id: Int)
 
-    class Base @Inject constructor(private val dao: TaskDao) : TasksCacheDataSource {
+    suspend fun doneTasks(): List<TaskWithLogs>
 
-        override suspend fun tasks(): List<TaskWithLogs> = dao.todoTasks()
+    suspend fun restoreTask(id: Int)
+
+    class Base @Inject constructor(
+        private val dao: TaskDao,
+    ) : TasksCacheDataSource {
+
+        override suspend fun doneTasks(): List<TaskWithLogs> = dao.doneTasks()
+
+
+        override suspend fun todoTasks(): List<TaskWithLogs> = dao.todoTasks()
 
         override suspend fun task(id: Int): TaskWithLogs = dao.task(id)
 
@@ -47,6 +56,12 @@ interface TasksCacheDataSource {
             val taskEntity = dao.task(id)
             val finishedTask = taskEntity.task.copy(finished = 1)
             dao.updateTask(finishedTask)
+        }
+
+        override suspend fun restoreTask(id: Int) {
+            val taskEntity = dao.task(id)
+            val restoreTask = taskEntity.task.copy(finished = 0)
+            dao.updateTask(restoreTask)
         }
 
         override suspend fun deleteByTaskId(id: Int) {

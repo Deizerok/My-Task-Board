@@ -44,4 +44,8 @@ class BaseTaskDetailsRepository @Inject constructor(
     override suspend fun deleteByTaskId(id: Int) {
         cacheDataSource.deleteByTaskId(id)
     }
+
+    override suspend fun restoreTask(id: Int) {
+        cacheDataSource.restoreTask(id)
+    }
 }

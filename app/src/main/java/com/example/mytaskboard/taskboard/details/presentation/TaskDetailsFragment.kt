@@ -59,11 +59,11 @@ class TaskDetailsFragment : Fragment() {
         }
 
         binding.actionButtonTextView.setOnClickListener {
-            viewModel.stopwatchActionClick(id)
+            viewModel.stopwatchActionClick()
         }
 
         binding.finishTaskButton.setOnClickListener {
-            viewModel.finishTask(id)
+            BottomSheetFinishTaskFragment.newInstance(id).show(requireActivity().supportFragmentManager, "addTime")
         }
 
         binding.deteleTaskButton.setOnClickListener {

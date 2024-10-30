@@ -45,4 +45,6 @@
     <string name="done">Done</string>
     <string name="stopwatch">Stopwatch</string>
     <string name="no_entries_exist">No entries exist</string>
+    <string name="cancel">Cancel</string>
+    <string name="restore_task">Restore Task</string>
 </resources>

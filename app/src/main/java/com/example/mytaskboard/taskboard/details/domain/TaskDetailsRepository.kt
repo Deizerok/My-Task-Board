@@ -11,4 +11,6 @@ interface TaskDetailsRepository {
     suspend fun finishTask(id: Int)
 
     suspend fun deleteByTaskId(id: Int)
+
+    suspend fun restoreTask(id: Int)
 }

@@ -2,7 +2,6 @@ package com.example.mytaskboard.di
 
 import com.example.mytaskboard.taskboard.details.data.BaseTaskDetailsRepository
 import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
-import com.example.mytaskboard.taskboard.details.presentation.StopwatchLiveDataWrapper
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsLiveDataWrapper
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsUiModel
 import com.example.mytaskboard.taskboard.details.presentation.ToTaskDetailsUiModelMapper
@@ -28,9 +27,18 @@ abstract class TaskDetailsModule {
 
     @Binds
     @ViewModelScoped
+    abstract fun mapperToDoneTaskDetailsUiModelMapper(mapper: ToDoneTaskDetailsUiModelMapper): TaskItem.Mapper<TaskDoneDetailsUiModel>
+
+    @Binds
+    @ViewModelScoped
     abstract fun taskDetailsLiveDataWrapper(taskLiveDataWrapper: TaskDetailsLiveDataWrapper.Base): TaskDetailsLiveDataWrapper
 
     @Binds
     @ViewModelScoped
     abstract fun stopwatchLiveDataWrapper(stopwatchLiveDataWrapper: StopwatchLiveDataWrapper.Base): StopwatchLiveDataWrapper
+    abstract fun bindTaskDetailsLiveDataWrapper(liveDataWrapper: TaskDetailsLiveDataWrapper.Base): TaskDetailsLiveDataWrapper
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindTaskDoneDetailsLiveDataWrapper(liveDataWrapper: TaskDoneDetailsLiveDataWrapper.Base): TaskDoneDetailsLiveDataWrapper
 }

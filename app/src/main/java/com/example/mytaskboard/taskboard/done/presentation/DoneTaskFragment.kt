@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.done
+package com.example.mytaskboard.taskboard.done.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,7 +19,7 @@ class DoneTaskFragment : Fragment() {
 
     private var _binding: FragmentDoneTaskBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: TodoViewModel by viewModels()
+    private val viewModel: DoneViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -34,20 +34,14 @@ class DoneTaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val tasksAdapter = TodoTasksAdapter(viewModel)
-//        binding.mainTaskRecyclerView.adapter = tasksAdapter
+        binding.mainTaskRecyclerView.adapter = tasksAdapter
         val animation =
             AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
         binding.mainLayout.startAnimation(animation)
 
-//        binding.floatingActionButton.setOnClickListener {
-//            viewModel.goToCreateTask()
-//        }
-//
-//
-//
-//        viewModel.liveData().observe(viewLifecycleOwner) {
-//            it.show(adapter = tasksAdapter)
-//        }
+        viewModel.liveData().observe(viewLifecycleOwner) {
+            it.show(adapter = tasksAdapter)
+        }
 
         viewModel.init()
     }
