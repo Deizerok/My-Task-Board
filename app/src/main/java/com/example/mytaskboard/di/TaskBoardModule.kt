@@ -1,6 +1,5 @@
 package com.example.mytaskboard.di
 
-import com.example.mytaskboard.core.domain.LoadResult
 import com.example.mytaskboard.taskboard.todo.data.BaseTasksRepository
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import com.example.mytaskboard.taskboard.todo.domain.TaskRepository

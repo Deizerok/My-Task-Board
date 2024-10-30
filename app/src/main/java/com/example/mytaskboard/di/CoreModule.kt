@@ -7,6 +7,7 @@ import com.example.mytaskboard.core.presentation.ManageResource
 import com.example.mytaskboard.core.presentation.MessageLiveDataWrapper
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.core.presentation.TimeLogToSpentTimeConverter
+import com.example.mytaskboard.taskboard.board.LanguageStorage
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -17,6 +18,9 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class CoreModule {
+
+    @Binds
+    abstract fun languageStore(languageStorage: LanguageStorage.Base): LanguageStorage
 
     @Binds
     abstract fun bindRunAsync(runAsync: RunAsync.Base): RunAsync
