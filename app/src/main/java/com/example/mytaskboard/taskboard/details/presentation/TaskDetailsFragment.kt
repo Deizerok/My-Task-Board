@@ -63,11 +63,11 @@ class TaskDetailsFragment : Fragment() {
         }
 
         binding.finishTaskButton.setOnClickListener {
-            viewModel.finishTask(id)
+            viewModel.openBottomSheetFinish(id)
         }
 
         binding.deteleTaskButton.setOnClickListener {
-            viewModel.deleteTask(id)
+            viewModel.openBottomSheetDelete(id)
         }
 
         viewModel.taskLiveData().observe(viewLifecycleOwner) { taskDetailsUiModel ->

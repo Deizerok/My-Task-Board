@@ -8,9 +8,7 @@ import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.mytaskboard.R
-import com.example.mytaskboard.databinding.FragmentDoneTaskBinding
 import com.example.mytaskboard.databinding.FragmentDoneTaskDetailsBinding
-import com.example.mytaskboard.databinding.FragmentTaskDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -57,12 +55,11 @@ class TaskDoneDetailsFragment : Fragment() {
         }
 
         binding.finishTaskButton.setOnClickListener {
-            BottomSheetRestoreTaskFragment.newInstance(id).show(requireActivity().supportFragmentManager, "addTime")
-
+            viewModel.openBottomSheetRestore(id)
         }
 
         binding.deteleTaskButton.setOnClickListener {
-            viewModel.deleteTask(id)
+            viewModel.openBottomSheetDelete(id)
         }
 
         viewModel.liveData().observe(viewLifecycleOwner) {

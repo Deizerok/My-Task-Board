@@ -2,6 +2,7 @@ package com.example.mytaskboard.taskboard.details.presentation
 
 import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
+import android.view.View
 import com.example.mytaskboard.databinding.FragmentTaskDetailsBinding
 import com.example.mytaskboard.taskboard.details.presentation.adapter.TimeLogAdapter
 
@@ -24,8 +25,11 @@ data class TaskDetailsUiModel(
         )
         iconImageView.setImageBitmap(bitmap)
         titleTextView.text = title
-        descriptionTextView.text = description
-
+        if (description == "") {
+            descriptionLinearLayout.visibility = View.GONE
+        } else {
+            descriptionTextView.text = description
+        }
 
         // Time log
         totalTimeTextView.text = spentTime

@@ -36,7 +36,7 @@
             android:paddingHorizontal="8dp"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="18sp"
             tools:text="A very long task to check multiline " />
 
         <LinearLayout
@@ -74,7 +74,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/description"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/descriptionTextView"
