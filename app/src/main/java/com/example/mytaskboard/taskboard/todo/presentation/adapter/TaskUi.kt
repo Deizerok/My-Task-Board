@@ -45,12 +45,6 @@ interface TaskUi {
     }
 
 
-
-    object Progress : TaskUi {
-
-        override fun type() = TaskTypeUi.Progress
-    }
-
     object Empty : TaskUi {
         override fun type(): TaskTypeUi = TaskTypeUi.Empty
     }

@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentTaskDetailsBinding
+import com.example.mytaskboard.taskboard.details.presentation.adapter.TimeLogAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -24,7 +26,6 @@ class TaskDetailsFragment : Fragment() {
             }
         }
     }
-
 
     private var _binding: FragmentTaskDetailsBinding? = null
     private val binding: FragmentTaskDetailsBinding
@@ -43,11 +44,14 @@ class TaskDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val id = requireArguments().getInt(KEY_ID)
-        val animationFadeIn = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
-        val animationFadeOut = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_out)
+        val animationFadeIn =
+            AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_in)
+        val animationFadeOut =
+            AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.fade_out)
         binding.mainDetailsLayout.startAnimation(animationFadeIn)
-        viewModel.init(id)
 
+        val timeLogAdapter = TimeLogAdapter()
+        binding.timeLogRecyclerView.adapter = timeLogAdapter
 
         binding.backToMainButton.setOnClickListener {
             binding.mainDetailsLayout.startAnimation(animationFadeOut)
@@ -55,21 +59,30 @@ class TaskDetailsFragment : Fragment() {
         }
 
         binding.actionButtonTextView.setOnClickListener {
-            viewModel.stopwatchActionClick()
+            viewModel.stopwatchActionClick(id)
         }
 
         binding.finishTaskButton.setOnClickListener {
             BottomSheetFinishTaskFragment.newInstance(id).show(requireActivity().supportFragmentManager, "addTime")
-
         }
 
         binding.deteleTaskButton.setOnClickListener {
             viewModel.deleteTask(id)
         }
 
-        viewModel.liveData().observe(viewLifecycleOwner) {
-            it.show(binding)
+        viewModel.taskLiveData().observe(viewLifecycleOwner) { taskDetailsUiModel ->
+            taskDetailsUiModel.show(binding)
         }
+
+        viewModel.stopwatchLiveData().observe(viewLifecycleOwner) { stopwatchUiState ->
+            stopwatchUiState.show(binding)
+        }
+
+        viewModel.messageLiveData().observe(viewLifecycleOwner) { message ->
+            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        }
+
+        viewModel.init(id)
     }
 
     override fun onDestroyView() {

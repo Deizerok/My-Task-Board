@@ -40,7 +40,6 @@ class ToDoTaskFragment : Fragment() {
             viewModel.goToCreateTask()
         }
 
-
         viewModel.liveData().observe(viewLifecycleOwner) {
             it.show(adapter = tasksAdapter)
         }

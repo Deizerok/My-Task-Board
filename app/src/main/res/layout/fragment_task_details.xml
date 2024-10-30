@@ -132,11 +132,11 @@
                 android:src="@drawable/stopwatch_icon" />
 
             <TextView
-                android:includeFontPadding="false"
                 android:id="@+id/totalTimeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
+                android:includeFontPadding="false"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 tools:text="0h 0m 0s" />
@@ -149,7 +149,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/timeLogRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="1"
+            tools:listitem="@layout/viewholder_time_log_entry" />
 
     </LinearLayout>
 
@@ -171,8 +174,8 @@
             android:background="@drawable/standart_button_style"
             android:backgroundTint="@color/content_background"
             android:elevation="3dp"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
 
             <TextView
@@ -185,10 +188,11 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:includeFontPadding="false"
+                android:id="@+id/sessionTimeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
+                android:includeFontPadding="false"
                 android:text="00:00:00"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
@@ -224,10 +228,10 @@
 
             <TextView
                 android:id="@+id/actionButtonTextView"
-                android:includeFontPadding="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
+                android:includeFontPadding="false"
                 android:text="@string/start_session"
                 android:textColor="@color/button_text"
                 android:textSize="16sp" />

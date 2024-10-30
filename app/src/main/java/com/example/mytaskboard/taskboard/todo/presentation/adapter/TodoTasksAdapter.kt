@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class TodoTasksAdapter(
     private val viewModel: TaskClickActions,
-    private val types: List<TaskTypeUi> = listOf(
-        TaskTypeUi.Base, TaskTypeUi.Progress, TaskTypeUi.Empty
-    )
+    private val types: List<TaskTypeUi> = listOf(TaskTypeUi.Base, TaskTypeUi.Empty)
 ) : RecyclerView.Adapter<TodoTaskViewHolder>() {
 
     private val products = mutableListOf<TaskUi>()

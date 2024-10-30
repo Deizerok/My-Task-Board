@@ -3,7 +3,6 @@ package com.example.mytaskboard.taskboard.todo.presentation.adapter
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mytaskboard.databinding.ViewholderNoTaskBinding
-import com.example.mytaskboard.databinding.ViewholderProgressBinding
 import com.example.mytaskboard.databinding.ViewholderTaskBinding
 
 abstract class TodoTaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -13,9 +12,6 @@ abstract class TodoTaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         viewModel: TaskClickActions,
         adapter: TodoTasksAdapter
     ) = Unit
-
-
-    class Progress(binding: ViewholderProgressBinding) : TodoTaskViewHolder(binding.root)
 
     class Base(private val binding: ViewholderTaskBinding) : TodoTaskViewHolder(binding.root) {
 
@@ -33,5 +29,4 @@ abstract class TodoTaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     }
 
     class Empty(binding: ViewholderNoTaskBinding) : TodoTaskViewHolder(binding.root)
-
 }

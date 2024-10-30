@@ -11,6 +11,8 @@ interface TasksCacheDataSource {
 
     suspend fun addTask(task: TaskEntity)
 
+    suspend fun addSessionTime(taskId: Int, date: Long, hours: Int, minutes: Int, seconds: Int)
+
     suspend fun finishedTask(id: Int)
 
     suspend fun deleteByTaskId(id: Int)
@@ -32,6 +34,24 @@ interface TasksCacheDataSource {
 
         override suspend fun addTask(task: TaskEntity) = dao.addTask(task)
 
+        override suspend fun addSessionTime(
+            taskId: Int,
+            date: Long,
+            hours: Int,
+            minutes: Int,
+            seconds: Int
+        ) {
+            dao.addTimeLogEntry(
+                TimeLogEntryEntity(
+                    taskId = taskId,
+                    date = date,
+                    hours = hours,
+                    minutes = minutes,
+                    seconds = seconds
+                )
+            )
+        }
+
         override suspend fun finishedTask(id: Int) {
             val taskEntity = dao.task(id)
             val finishedTask = taskEntity.task.copy(finished = 1)
@@ -47,8 +67,6 @@ interface TasksCacheDataSource {
         override suspend fun deleteByTaskId(id: Int) {
             dao.deleteByTaskId(id)
         }
-
-
     }
 }
 

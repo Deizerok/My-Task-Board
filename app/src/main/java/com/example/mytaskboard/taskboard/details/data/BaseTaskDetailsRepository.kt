@@ -27,6 +27,16 @@ class BaseTaskDetailsRepository @Inject constructor(
         )
     }
 
+    override suspend fun addSessionTime(
+        taskId: Int,
+        date: Long,
+        hours: Int,
+        minutes: Int,
+        seconds: Int
+    ) {
+        cacheDataSource.addSessionTime(taskId, date, hours, minutes, seconds)
+    }
+
     override suspend fun finishTask(id: Int) {
         cacheDataSource.finishedTask(id)
     }
