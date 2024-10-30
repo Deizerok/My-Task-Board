@@ -14,8 +14,8 @@
     <string name="start_timer">Start Timer</string>
     <string name="options">options</string>
     <string name="back">Back</string>
-    <string name="name_task">Name Task*</string>
-    <string name="description_">Description*</string>
+    <string name="name_task">Name Task</string>
+    <string name="description_">Description</string>
     <string name="picture">Picture</string>
     <string name="for_example_you_can_leave_links_to_important_materials_in_the_description">For example, you can leave links to important materials in the description!</string>
     <string name="plus">+</string>
@@ -23,7 +23,7 @@
     <string name="fab_button">FAB button</string>
     <string name="time_spent">Time spent</string>
     <string name="task">Task</string>
-    <string name="choose_an_icon">Choose an icon:</string>
+    <string name="choose_an_icon">icon:</string>
     <string name="support_the_project">Support the project</string>
     <string name="menu">Menu</string>
     <string name="example_20_40_60">For example 5m, 15m, 30m</string>
@@ -47,4 +47,6 @@
     <string name="no_entries_exist">No entries exist</string>
     <string name="cancel">Cancel</string>
     <string name="restore_task">Restore Task</string>
+    <string name="are_you_sure_to_delete_the_task">Are you sure to delete the task?</string>
+    <string name="are_you_sure_to_finish_the_task">Are you sure to finish the task?</string>
 </resources>

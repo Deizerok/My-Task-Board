@@ -63,11 +63,13 @@ class TaskDetailsFragment : Fragment() {
         }
 
         binding.finishTaskButton.setOnClickListener {
-            BottomSheetFinishTaskFragment.newInstance(id).show(requireActivity().supportFragmentManager, "addTime")
+//            viewModel.finishTask(id)
+//            BottomSheetFinishTaskFragment.newInstance(id).show(requireActivity().supportFragmentManager, "addTime")
+            viewModel.openBottomSheetFinish(id)
         }
 
         binding.deteleTaskButton.setOnClickListener {
-            viewModel.deleteTask(id)
+            viewModel.openBottomSheetDelete(id)
         }
 
         viewModel.taskLiveData().observe(viewLifecycleOwner) { taskDetailsUiModel ->
