@@ -44,6 +44,8 @@ interface TaskUi {
         override fun isTheSameById(id: Int) = this.id == id
     }
 
+
+
     object Progress : TaskUi {
 
         override fun type() = TaskTypeUi.Progress

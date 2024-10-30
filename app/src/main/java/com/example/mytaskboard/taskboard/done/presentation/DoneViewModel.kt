@@ -1,4 +1,4 @@
-package com.example.mytaskboard.taskboard.todo.presentation
+package com.example.mytaskboard.taskboard.done.presentation
 
 import com.example.fakestore.core.presentation.ProvideLiveData
 import com.example.mytaskboard.core.presentation.BaseViewModel
@@ -6,15 +6,18 @@ import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.taskboard.create.presentation.CreateTaskScreen
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsScreen
+import com.example.mytaskboard.taskboard.done_details.TaskDoneDetailsScreen
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import com.example.mytaskboard.taskboard.todo.domain.TaskRepository
+import com.example.mytaskboard.taskboard.todo.presentation.TasksLiveDataWrapper
+import com.example.mytaskboard.taskboard.todo.presentation.TasksUiState
 import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskClickActions
 import com.example.mytaskboard.taskboard.todo.presentation.adapter.TaskUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class TodoViewModel @Inject constructor(
+class DoneViewModel @Inject constructor(
     private val navigation: Navigation.Navigate,
     private val repository: TaskRepository,
     private val communication: TasksLiveDataWrapper,
@@ -26,7 +29,7 @@ class TodoViewModel @Inject constructor(
 
     fun init() {
         runAsync({
-            repository.todoTasks()
+            repository.doneTasks()
         }, { taskItems ->
             val uiState = if (taskItems.isEmpty()) {
                 TasksUiState.NoTasks
@@ -41,7 +44,7 @@ class TodoViewModel @Inject constructor(
     }
 
     override fun goToTaskDetails(id: Int) {
-        navigation.updateUi(TaskDetailsScreen(id))
+        navigation.updateUi(TaskDoneDetailsScreen(id))
     }
 
     override fun goToCreateTask() {

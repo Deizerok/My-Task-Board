@@ -5,6 +5,9 @@ import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsLiveDataWrapper
 import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsUiModel
 import com.example.mytaskboard.taskboard.details.presentation.ToTaskDetailsUiModelMapper
+import com.example.mytaskboard.taskboard.done_details.TaskDoneDetailsLiveDataWrapper
+import com.example.mytaskboard.taskboard.done_details.TaskDoneDetailsUiModel
+import com.example.mytaskboard.taskboard.done_details.ToDoneTaskDetailsUiModelMapper
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import dagger.Binds
 import dagger.Module
@@ -21,11 +24,21 @@ abstract class TaskDetailsModule {
     @ViewModelScoped
     abstract fun bindsTaskDetailsRepository(repository: BaseTaskDetailsRepository): TaskDetailsRepository
 
+
+
     @Binds
     @ViewModelScoped
     abstract fun mapper(mapper: ToTaskDetailsUiModelMapper): TaskItem.Mapper<TaskDetailsUiModel>
 
     @Binds
     @ViewModelScoped
+    abstract fun mapperToDoneTaskDetailsUiModelMapper(mapper: ToDoneTaskDetailsUiModelMapper): TaskItem.Mapper<TaskDoneDetailsUiModel>
+
+    @Binds
+    @ViewModelScoped
     abstract fun bindTaskDetailsLiveDataWrapper(liveDataWrapper: TaskDetailsLiveDataWrapper.Base): TaskDetailsLiveDataWrapper
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindTaskDoneDetailsLiveDataWrapper(liveDataWrapper: TaskDoneDetailsLiveDataWrapper.Base): TaskDoneDetailsLiveDataWrapper
 }

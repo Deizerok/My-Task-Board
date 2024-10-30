@@ -10,8 +10,8 @@ class BaseTasksRepository @Inject constructor(
     private val tasksCacheDataSource: TasksCacheDataSource
 ) : TaskRepository {
 
-    override suspend  fun tasks(): List<TaskItem> {
-        return tasksCacheDataSource.tasks().map {
+    override suspend  fun todoTasks(): List<TaskItem> {
+        return tasksCacheDataSource.todoTasks().map {
             TaskItem.Base(
                 id = it.task.id,
                 title = it.task.title,
@@ -28,6 +28,26 @@ class BaseTasksRepository @Inject constructor(
             )
         }
     }
+
+    override suspend  fun doneTasks(): List<TaskItem> {
+        return tasksCacheDataSource.doneTasks().map {
+            TaskItem.Base(
+                id = it.task.id,
+                title = it.task.title,
+                description = it.task.description,
+                timeLog = it.timeLogs.map { timeLog ->
+                    TimeLogEntry(
+                        date = timeLog.date,
+                        hours = timeLog.hours,
+                        minutes = timeLog.minutes,
+                        seconds = timeLog.seconds
+                    )
+                },
+                picture = it.task.picture
+            )
+        }
+    }
+
 
     override suspend fun task(id: Int) = tasksCacheDataSource.task(id).run {
         TaskItem.Base(
