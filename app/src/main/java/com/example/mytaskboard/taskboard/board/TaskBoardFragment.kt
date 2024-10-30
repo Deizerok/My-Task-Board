@@ -48,12 +48,12 @@ class TaskBoardFragment : Fragment() {
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {
                 0 -> {
-                    tab.text = "To do"
+                    tab.text = getString(R.string.to_do)
                     tab.setIcon(R.drawable.bookmark_icon)
                 }
 
                 1 -> {
-                    tab.text = "Done"
+                    tab.text = getString(R.string.done)
                     tab.setIcon(R.drawable.done_icon)
                 }
             }

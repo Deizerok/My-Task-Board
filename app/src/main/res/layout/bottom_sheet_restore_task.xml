@@ -16,7 +16,7 @@
         android:textSize="18sp"
         android:gravity="center"
         android:textColor="@color/white"
-        android:text="Are you sure to restore the task?"
+        android:text="@string/are_you_sure_to_restore_the_task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

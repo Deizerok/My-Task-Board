@@ -5,7 +5,9 @@ import androidx.work.Data
 import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
+import com.example.mytaskboard.R
 import com.example.mytaskboard.core.presentation.BaseViewModel
+import com.example.mytaskboard.core.presentation.ManageResource
 import com.example.mytaskboard.core.presentation.MessageLiveDataWrapper
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
@@ -34,6 +36,7 @@ class TaskTodoDetailsViewModel @Inject constructor(
     private val messageLiveDataWrapper: MessageLiveDataWrapper,
     private val navigation: Navigation.Navigate,
     private val repository: TaskDetailsRepository,
+    private val manageResource: ManageResource.Base,
     private val mapper: TaskItem.Mapper<TaskTodoDetailsUiModel>,
     runAsync: RunAsync
 ) : BaseViewModel(runAsync) {
@@ -67,7 +70,7 @@ class TaskTodoDetailsViewModel @Inject constructor(
             workManager.cancelUniqueWork(WORK_NAME)
 
             if (seconds <= 10) {
-                messageLiveDataWrapper.updateUi("Session lasted less than 10 seconds")
+                messageLiveDataWrapper.updateUi(manageResource.string(R.string.session_lasted_less_than_10_seconds))
             } else {
                 runAsync({
                     repository.addSessionTime(
@@ -101,7 +104,7 @@ class TaskTodoDetailsViewModel @Inject constructor(
                 stopwatchWorkRequest
             )
         } else {
-            messageLiveDataWrapper.updateUi("Stop session in another task before starting a new one")
+            messageLiveDataWrapper.updateUi(manageResource.string(R.string.stop_session_in_another_task_before_starting_a_new_one))
         }
     }
 
@@ -120,7 +123,7 @@ class TaskTodoDetailsViewModel @Inject constructor(
 
     fun openBottomSheetFinish(id: Int) {
         if (stopwatch.isRunning() && stopwatch.runningTaskId() == id) {
-            messageLiveDataWrapper.updateUi("Before finishing the task stop a session")
+            messageLiveDataWrapper.updateUi(manageResource.string(R.string.before_finishing_the_task_stop_a_session))
         } else {
             navigation.updateUi(BottomSheetFinishTaskScreen(id))
         }
@@ -129,7 +132,7 @@ class TaskTodoDetailsViewModel @Inject constructor(
     fun openBottomSheetDelete(id: Int) {
 
         if (stopwatch.isRunning() && stopwatch.runningTaskId() == id) {
-            messageLiveDataWrapper.updateUi("Before deleting the task stop a session")
+            messageLiveDataWrapper.updateUi(manageResource.string(R.string.before_deleting_the_task_stop_a_session))
         } else {
             navigation.updateUi(BottomSheetDeleteTaskScreen(id))
         }

@@ -231,10 +231,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:includeFontPadding="false"
                 android:text="@string/start_session"
-                android:textColor="@color/button_text"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
+
+
         </LinearLayout>
 
     </LinearLayout>
