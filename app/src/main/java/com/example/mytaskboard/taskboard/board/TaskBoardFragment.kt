@@ -15,18 +15,24 @@ import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentTaskBoardBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
 class TaskBoardFragment : Fragment() {
+
+
+    @Inject
+    lateinit var languageStorage: LanguageStorage
 
     private var _binding: FragmentTaskBoardBinding? = null
     private val binding get() = _binding!!
     private val viewModel: TaskBoardViewModel by viewModels()
 
     private val languages = listOf(
-        Language("UA", R.drawable.circle_ua_flag),
-        Language("US", R.drawable.circle_us_flag)
+        Language("UA", local = "uk", R.drawable.circle_ua_flag),
+        Language("US", local = "en", R.drawable.circle_us_flag)
     )
 
     override fun onCreateView(
@@ -49,7 +55,6 @@ class TaskBoardFragment : Fragment() {
         binding.mainMenuButton.setOnClickListener {
             viewModel.goToMenu()
         }
-
 
         binding.languageImageButton.setOnClickListener {
             val inflater = LayoutInflater.from(requireContext())
@@ -75,12 +80,13 @@ class TaskBoardFragment : Fragment() {
                 flagImageView.setImageResource(language.iconResId)
 
                 // Show check if this is the selected language
-                if (viewModel.currentLanguage().name == language.name) {
+                if (viewModel.currentLanguage() == language) {
                     checkImageView.visibility = View.VISIBLE
                 }
 
                 itemView.setOnClickListener {
-                    viewModel.changeLanguage(language)
+                    viewModel.changeLanguage(language)  // Replace with your actual flag resource
+                    setLocale(Locale(language.local))
                     popupWindow.dismiss()
                 }
 
@@ -110,5 +116,13 @@ class TaskBoardFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setLocale(locale: Locale) {
+        Locale.setDefault(locale)
+        val config = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
+        requireActivity().recreate()
     }
 }

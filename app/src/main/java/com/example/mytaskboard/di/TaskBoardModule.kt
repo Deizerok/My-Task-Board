@@ -1,6 +1,5 @@
 package com.example.mytaskboard.di
 
-import com.example.mytaskboard.taskboard.board.LanguageStorage
 import com.example.mytaskboard.taskboard.todo.data.BaseTasksRepository
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import com.example.mytaskboard.taskboard.todo.domain.TaskRepository
@@ -17,10 +16,6 @@ import dagger.hilt.android.scopes.ViewModelScoped
 @Module
 @InstallIn(ViewModelComponent::class)
 abstract class TaskBoardModule {
-
-    @Binds
-    @ViewModelScoped
-    abstract fun languageStore(languageStorage: LanguageStorage.Base): LanguageStorage
 
     @Binds
     @ViewModelScoped

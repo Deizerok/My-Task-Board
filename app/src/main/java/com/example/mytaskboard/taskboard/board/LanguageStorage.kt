@@ -19,23 +19,24 @@ interface LanguageStorage {
 
         override fun save(language: Language) {
             sharedPreferences.edit()
-                .putString(KEY_SELECTED_LANGUAGE, language.name)
-                .putInt(KEY_SELECTED_ICON, language.iconResId)
+                .putString(KEY_LANGUAGE, language.name)
+                .putString(KEY_LOCAL, language.local)
+                .putInt(KEY_ICON, language.iconResId)
                 .apply()
         }
 
         override fun get(): Language {
-            val languageName = sharedPreferences.getString(KEY_SELECTED_LANGUAGE, null)
-            val iconResId = sharedPreferences.getInt(KEY_SELECTED_ICON, -1)
+            val languageName = sharedPreferences.getString(KEY_LANGUAGE, "US")!!
+            val local = sharedPreferences.getString(KEY_LOCAL, "en")!!
+            val iconResId = sharedPreferences.getInt(KEY_ICON, R.drawable.circle_us_flag)
 
-            return if (languageName != null && iconResId != -1) {
-                Language(languageName, iconResId)
-            } else Language(name = "US", iconResId = R.drawable.circle_us_flag)
+            return Language(name = languageName, local = local, iconResId = iconResId)
         }
 
         companion object {
-            private const val KEY_SELECTED_LANGUAGE = "selected_language"
-            private const val KEY_SELECTED_ICON = "selected_icon"
+            private const val KEY_LANGUAGE = "selected_language"
+            private const val KEY_LOCAL = "selected_local"
+            private const val KEY_ICON = "selected_icon"
         }
     }
 }
