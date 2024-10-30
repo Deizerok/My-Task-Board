@@ -9,7 +9,7 @@ abstract class BaseViewModel(
     private val runAsync: RunAsync
 ) : ViewModel() {
 
-    private val coroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
+    protected val coroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
 
     fun <T : Any> runAsync(
         backgroundBlock: suspend () -> T,

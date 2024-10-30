@@ -1,11 +1,11 @@
 package com.example.mytaskboard.di
 
-import com.example.mytaskboard.taskboard.details.data.BaseTaskDetailsRepository
-import com.example.mytaskboard.taskboard.details.domain.TaskDetailsRepository
-import com.example.mytaskboard.taskboard.details.presentation.StopwatchLiveDataWrapper
-import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsLiveDataWrapper
-import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsUiModel
-import com.example.mytaskboard.taskboard.details.presentation.ToTaskDetailsUiModelMapper
+import com.example.mytaskboard.taskboard.todo_details.data.BaseTaskDetailsRepository
+import com.example.mytaskboard.taskboard.todo_details.domain.TaskDetailsRepository
+import com.example.mytaskboard.taskboard.todo_details.presentation.StopwatchLiveDataWrapper
+import com.example.mytaskboard.taskboard.todo_details.presentation.TaskDetailsLiveDataWrapper
+import com.example.mytaskboard.taskboard.todo_details.presentation.TaskDetailsUiModel
+import com.example.mytaskboard.taskboard.todo_details.presentation.ToTaskDetailsUiModelMapper
 import com.example.mytaskboard.taskboard.done_details.TaskDoneDetailsLiveDataWrapper
 import com.example.mytaskboard.taskboard.done_details.TaskDoneDetailsUiModel
 import com.example.mytaskboard.taskboard.done_details.ToDoneTaskDetailsUiModelMapper
