@@ -5,7 +5,6 @@ import com.example.mytaskboard.core.presentation.BaseViewModel
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.taskboard.create.presentation.CreateTaskScreen
-import com.example.mytaskboard.taskboard.details.presentation.TaskDetailsScreen
 import com.example.mytaskboard.taskboard.done_details.TaskDoneDetailsScreen
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
 import com.example.mytaskboard.taskboard.todo.domain.TaskRepository

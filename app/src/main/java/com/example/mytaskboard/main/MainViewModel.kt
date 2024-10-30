@@ -3,7 +3,7 @@ package com.example.mytaskboard.main
 import androidx.lifecycle.LiveData
 import com.example.mytaskboard.core.presentation.BaseViewModel
 import com.example.mytaskboard.core.presentation.RunAsync
-import com.example.mytaskboard.splash.presentation.SplashScreen
+import com.example.mytaskboard.splash.SplashScreen
 import com.example.mytaskboard.taskboard.todo.presentation.TaskBoardScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -24,7 +24,7 @@ class MainViewModel @Inject constructor(
     }
 
     fun startTaskBoard() = runAsync({
-        delay(4000)
+        delay(2500)
     }, {
         navigation.updateUi(TaskBoardScreen)
     })
