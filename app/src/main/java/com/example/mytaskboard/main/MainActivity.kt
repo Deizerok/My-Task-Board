@@ -1,15 +1,15 @@
 package com.example.mytaskboard.main
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mytaskboard.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
-import java.lang.Thread.sleep
-import java.util.logging.Handler
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -27,6 +27,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewModel.init(savedInstanceState == null)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requestPermissions(Manifest.permission.POST_NOTIFICATIONS)
+        }
+    }
+
+    private fun requestPermissions(vararg permissions: String) {
+        val requestPermissionLauncher = registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ) { result ->
+            result.entries.forEach {
+                Log.d("MainActivity", "${it.key} = ${it.value}")
+            }
+        }
+        requestPermissionLauncher.launch(permissions.asList().toTypedArray())
     }
 
     @SuppressLint("MissingSuperCall")

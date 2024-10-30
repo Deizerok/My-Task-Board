@@ -38,12 +38,9 @@ class BottomSheetFinishTaskFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val id = requireArguments().getInt(KEY_ID)
-        var time: Int
-        //    viewModel.finishTask(id)
 
         binding.finishTaskButton.setOnClickListener {
             viewModel.finishTask(id)
-            dismiss()
         }
 
         binding.cancelTaskButton.setOnClickListener {

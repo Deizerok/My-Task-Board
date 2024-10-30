@@ -14,6 +14,8 @@ data class TaskDetailsUiModel(
     private val picture: ByteArray
 ) {
 
+    fun getTitle() = title
+
     @SuppressLint("SetTextI18n")
     fun show(binding: FragmentTaskDetailsBinding) = with(binding) {
 

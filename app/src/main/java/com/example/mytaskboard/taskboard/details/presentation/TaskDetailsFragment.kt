@@ -63,7 +63,7 @@ class TaskDetailsFragment : Fragment() {
         }
 
         binding.finishTaskButton.setOnClickListener {
-            BottomSheetFinishTaskFragment.newInstance(id).show(requireActivity().supportFragmentManager, "addTime")
+            viewModel.finishTask(id)
         }
 
         binding.deteleTaskButton.setOnClickListener {
