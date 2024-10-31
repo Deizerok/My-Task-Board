@@ -83,7 +83,8 @@ class TaskBoardFragment : Fragment() {
                 }
 
                 itemView.setOnClickListener {
-                    viewModel.changeLanguage(language)  // Replace with your actual flag resource
+                    viewModel.changeLanguage(language)
+                    popupWindow.dismiss()
                     requireActivity().recreate()
                 }
 
