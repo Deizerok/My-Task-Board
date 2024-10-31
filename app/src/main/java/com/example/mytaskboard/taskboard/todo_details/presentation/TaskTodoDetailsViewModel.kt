@@ -36,7 +36,7 @@ class TaskTodoDetailsViewModel @Inject constructor(
     private val messageLiveDataWrapper: MessageLiveDataWrapper,
     private val navigation: Navigation.Navigate,
     private val repository: TaskDetailsRepository,
-    private val manageResource: ManageResource.Base,
+    private val manageResource: ManageResource,
     private val mapper: TaskItem.Mapper<TaskTodoDetailsUiModel>,
     runAsync: RunAsync
 ) : BaseViewModel(runAsync) {
