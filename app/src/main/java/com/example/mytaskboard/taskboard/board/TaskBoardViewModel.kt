@@ -24,4 +24,3 @@ class TaskBoardViewModel @Inject constructor(
 
     fun currentLanguage() = languageStorage.get()
 }
-
