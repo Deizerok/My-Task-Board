@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         super.attachBaseContext(localeUpdatedContext)
     }
 
+
     private fun requestPermissions(vararg permissions: String) {
         val requestPermissionLauncher = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()

@@ -15,13 +15,11 @@ import com.example.mytaskboard.R
 import com.example.mytaskboard.databinding.FragmentTaskBoardBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Locale
 import javax.inject.Inject
 
 
 @AndroidEntryPoint
 class TaskBoardFragment : Fragment() {
-
 
     @Inject
     lateinit var languageStorage: LanguageStorage
@@ -86,8 +84,7 @@ class TaskBoardFragment : Fragment() {
 
                 itemView.setOnClickListener {
                     viewModel.changeLanguage(language)  // Replace with your actual flag resource
-                    setLocale(Locale(language.local))
-                    popupWindow.dismiss()
+                    requireActivity().recreate()
                 }
 
                 dropdownContainer.addView(itemView)
@@ -116,13 +113,5 @@ class TaskBoardFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    private fun setLocale(locale: Locale) {
-        Locale.setDefault(locale)
-        val config = resources.configuration
-        config.setLocale(locale)
-        resources.updateConfiguration(config, resources.displayMetrics)
-        requireActivity().recreate()
     }
 }
