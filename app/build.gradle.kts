@@ -2,13 +2,14 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
-    id("androidx.room")
-    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.room)
+    alias(libs.plugins.dagger.hilt.android)
+    alias(libs.plugins.gms.google.services)
 }
 
 android {
     namespace = "com.example.mytaskboard"
-    compileSdk = 34
+    compileSdk = 35
 
     room {
         schemaDirectory("$projectDir/schemas")
@@ -17,7 +18,7 @@ android {
     defaultConfig {
         applicationId = "com.example.mytaskboard"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -57,16 +58,16 @@ dependencies {
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.fragment.ktx)
 
-    //Hilt
+    // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
-    //Room
+    // Room
     implementation(libs.androidx.room.ktx)
     kapt(libs.androidx.room.compiler)
     androidTestImplementation(libs.androidx.room.testing)
-    //Image Picasso
+    // Image Picasso
     implementation(libs.picasso)
-    //Android
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -75,6 +76,17 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Firebase BoM
+    implementation(platform(libs.firebase.bom))
+    // Firebase Auth
+    implementation(libs.firebase.auth)
+    implementation(libs.play.services.auth) // Google Play services library for auth
+
+    // Google auth
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)     //for credentials support from play services, for devices running  Android 13 and below.
+    implementation(libs.googleid)
 
 }
 

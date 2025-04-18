@@ -57,4 +57,6 @@
     <string name="before_deleting_the_task_stop_a_session">Перед видаленням завдання зупиніть сеанс</string>
     <string name="no_entries">Немає записів</string>
     <string name="are_you_sure_to_restore_the_task">Ви впевнені, що відновите завдання?</string>
+    <string name="logo">лого</string>
+    <string name="continue_with_google">Продовжити з Google</string>
 </resources>

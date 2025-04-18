@@ -14,7 +14,7 @@ import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.taskboard.core.BottomSheetDeleteTaskScreen
 import com.example.mytaskboard.taskboard.core.BottomSheetFinishTaskScreen
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
-import com.example.mytaskboard.taskboard.todo.presentation.TaskBoardScreen
+import com.example.mytaskboard.taskboard.board.TaskBoardScreen
 import com.example.mytaskboard.taskboard.todo_details.domain.TaskDetailsRepository
 import com.example.mytaskboard.taskboard.todo_details.presentation.stopwatch.Stopwatch
 import com.example.mytaskboard.taskboard.todo_details.presentation.stopwatch.StopwatchUiState

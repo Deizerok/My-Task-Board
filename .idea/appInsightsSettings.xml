@@ -3,15 +3,29 @@
   <component name="AppInsightsSettings">
     <option name="tabSettings">
       <map>
+        <entry key="Android Vitals">
+          <value>
+            <InsightsFilterSettings>
+              <option name="connection">
+                <ConnectionSetting>
+                  <option name="appId" value="com.bugbender.gameofthronescharacters" />
+                </ConnectionSetting>
+              </option>
+              <option name="signal" value="SIGNAL_UNSPECIFIED" />
+              <option name="timeIntervalDays" value="SEVEN_DAYS" />
+              <option name="visibilityType" value="ALL" />
+            </InsightsFilterSettings>
+          </value>
+        </entry>
         <entry key="Firebase Crashlytics">
           <value>
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.mytaskboard" />
+                  <option name="mobileSdkAppId" value="1:443511397368:android:3b4d8b31a4dddcf26b540d" />
+                  <option name="projectId" value="my-task-board-eccc5" />
+                  <option name="projectNumber" value="443511397368" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
