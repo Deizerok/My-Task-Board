@@ -1,4 +1,4 @@
-package com.example.mytaskboard.splash
+package com.example.mytaskboard.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,24 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.mytaskboard.databinding.FragmentSplashBinding
-import com.example.mytaskboard.main.MainViewModel
+import com.example.mytaskboard.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
-class SplashFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    private var _binding: FragmentSplashBinding? = null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-    private val mainViewModel: MainViewModel by viewModels()
+    private val loginViewModel: LoginViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSplashBinding.inflate(inflater, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,7 +30,13 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
-        mainViewModel.checkUserSigning()
+        binding.loginButton.setOnClickListener {
+            loginViewModel.loginWithGoogle(requireContext())
+        }
+
+        loginViewModel.liveData().observe(viewLifecycleOwner) { uiState ->
+            uiState.show(binding)
+        }
     }
 
     override fun onDestroyView() {

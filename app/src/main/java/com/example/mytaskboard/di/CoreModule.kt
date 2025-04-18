@@ -2,18 +2,26 @@ package com.example.mytaskboard.di
 
 import android.content.Context
 import androidx.work.WorkManager
+import com.example.mytaskboard.core.data.AuthRepository
 import com.example.mytaskboard.core.data.DateConverter
+import com.example.mytaskboard.core.data.ProvideResources
+import com.example.mytaskboard.core.presentation.ContextUtils
 import com.example.mytaskboard.core.presentation.ManageResource
 import com.example.mytaskboard.core.presentation.MessageLiveDataWrapper
 import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.core.presentation.TimeLogToSpentTimeConverter
 import com.example.mytaskboard.taskboard.board.LanguageStorage
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import java.util.Locale
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -26,9 +34,6 @@ abstract class CoreModule {
     abstract fun bindRunAsync(runAsync: RunAsync.Base): RunAsync
 
     @Binds
-    abstract fun bindManageResource(resource: ManageResource.Base): ManageResource
-
-    @Binds
     abstract fun timeLogConverter(converter: TimeLogToSpentTimeConverter.Base): TimeLogToSpentTimeConverter
 
     @Binds
@@ -37,9 +42,30 @@ abstract class CoreModule {
     @Binds
     abstract fun messageLiveWrapper(liveDataWrapper: MessageLiveDataWrapper.Base): MessageLiveDataWrapper
 
+    @Binds
+    @Singleton
+    abstract fun authRepository(repository: AuthRepository.Base): AuthRepository
+
+    @Binds
+    abstract fun provideResources(impl: ProvideResources.Base): ProvideResources
+
     companion object {
+
+        @Provides
+        fun firebaseAuth(): FirebaseAuth = Firebase.auth
+
         @Provides
         fun workManager(@ApplicationContext appContext: Context): WorkManager =
             WorkManager.getInstance(appContext)
+
+        @Provides
+        fun manageResource(
+            @ApplicationContext appContext: Context,
+            languageStorage: LanguageStorage.Base
+        ): ManageResource {
+            val localeToSwitch = Locale(languageStorage.get().local)
+            val localeUpdatedContext = ContextUtils.updateLocale(appContext, localeToSwitch)
+            return ManageResource.Base(context = localeUpdatedContext)
+        }
     }
 }

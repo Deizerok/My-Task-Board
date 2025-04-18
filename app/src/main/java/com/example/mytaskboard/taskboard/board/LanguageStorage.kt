@@ -26,9 +26,9 @@ interface LanguageStorage {
         }
 
         override fun get(): Language {
-            val languageName = sharedPreferences.getString(KEY_LANGUAGE, "US")!!
-            val local = sharedPreferences.getString(KEY_LOCAL, "en")!!
-            val iconResId = sharedPreferences.getInt(KEY_ICON, R.drawable.circle_us_flag)
+            val languageName = sharedPreferences.getString(KEY_LANGUAGE, "UA")!!
+            val local = sharedPreferences.getString(KEY_LOCAL, "uk")!!
+            val iconResId = sharedPreferences.getInt(KEY_ICON, R.drawable.circle_ua_flag)
 
             return Language(name = languageName, local = local, iconResId = iconResId)
         }

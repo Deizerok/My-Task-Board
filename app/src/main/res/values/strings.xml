@@ -56,4 +56,6 @@
     <string name="before_deleting_the_task_stop_a_session">Before deleting the task stop a session</string>
     <string name="no_entries">No entries</string>
     <string name="are_you_sure_to_restore_the_task">Are you sure to restore the task?</string>
+    <string name="logo">logo</string>
+    <string name="continue_with_google">Continue with Google</string>
 </resources>

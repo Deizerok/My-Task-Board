@@ -5,7 +5,7 @@ import com.example.mytaskboard.core.presentation.RunAsync
 import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.main.Screen
 import com.example.mytaskboard.taskboard.create.domain.CreateTaskRepository
-import com.example.mytaskboard.taskboard.todo.presentation.TaskBoardScreen
+import com.example.mytaskboard.taskboard.board.TaskBoardScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

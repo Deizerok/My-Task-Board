@@ -11,7 +11,7 @@ import javax.inject.Inject
 class ToTaskDetailsUiModelMapper @Inject constructor(
     private val spentTimeConverter: TimeLogToSpentTimeConverter,
     private val dateConverter: DateConverter,
-    private val manageResource: ManageResource.Base,
+    private val manageResource: ManageResource,
 ) : TaskItem.Mapper<TaskTodoDetailsUiModel> {
 
     override fun map(

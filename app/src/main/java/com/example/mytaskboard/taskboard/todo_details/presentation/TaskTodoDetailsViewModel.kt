@@ -14,7 +14,7 @@ import com.example.mytaskboard.main.Navigation
 import com.example.mytaskboard.taskboard.core.BottomSheetDeleteTaskScreen
 import com.example.mytaskboard.taskboard.core.BottomSheetFinishTaskScreen
 import com.example.mytaskboard.taskboard.todo.domain.TaskItem
-import com.example.mytaskboard.taskboard.todo.presentation.TaskBoardScreen
+import com.example.mytaskboard.taskboard.board.TaskBoardScreen
 import com.example.mytaskboard.taskboard.todo_details.domain.TaskDetailsRepository
 import com.example.mytaskboard.taskboard.todo_details.presentation.stopwatch.Stopwatch
 import com.example.mytaskboard.taskboard.todo_details.presentation.stopwatch.StopwatchUiState
@@ -36,7 +36,7 @@ class TaskTodoDetailsViewModel @Inject constructor(
     private val messageLiveDataWrapper: MessageLiveDataWrapper,
     private val navigation: Navigation.Navigate,
     private val repository: TaskDetailsRepository,
-    private val manageResource: ManageResource.Base,
+    private val manageResource: ManageResource,
     private val mapper: TaskItem.Mapper<TaskTodoDetailsUiModel>,
     runAsync: RunAsync
 ) : BaseViewModel(runAsync) {
